@@ -20,6 +20,32 @@ public class Coach {
     @Column(name = "coachId")
     private int coachId;
 
+    @Column(name = "firstName")
+    private String firstName;
+
+    @Column(name = "lastName")
+    private String lastName;
+
+    @Column(name = "age")
+    private int age;
+
+    @Column(name = "gender")
+    private String gender;
+
+    @Column(name = "userName")
+    private String username;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "mobileNumber")
+    private int mobileNumber;
+
+    @Column(name = "location")
+    private String location;
 
     @Column(name = "yearOfExperience")
     private int yearOfExperience;
