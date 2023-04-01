@@ -1,0 +1,9 @@
+.bg-img {
+    background-image: url(../assets/fitness.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.card{
+    max-width: 30rem;
+}

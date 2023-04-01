@@ -1,18 +1,16 @@
 package com.fit2planet.demo.Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
+@Data
 @Table(name = "coach")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Builder
 public class Coach {
 
     @Id
@@ -52,5 +50,9 @@ public class Coach {
 
     @Column(name = "certificates")
     private String certificates;
+
+    @OneToOne(mappedBy = "coach", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private LoginDetails loginDetails;
 
 }

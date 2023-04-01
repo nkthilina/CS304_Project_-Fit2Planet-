@@ -2,16 +2,15 @@ package com.fit2planet.demo.Model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
+@Data
 @Table(name = "login_details")
 @Getter
 @Setter
 @AllArgsConstructor
-
+@Builder
 public class LoginDetails {
 
     @Id
@@ -29,5 +28,10 @@ public class LoginDetails {
     @MapsId
     @JoinColumn(name = "user_userId")
     private User user;
+
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "coach_coachId")
+    private Coach coach;
 
 }

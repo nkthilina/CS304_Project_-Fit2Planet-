@@ -1,10 +1,7 @@
 package com.fit2planet.demo.Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,12 +9,13 @@ import java.util.Set;
 
 
 @Entity
+@Data
 @Table(name = "user")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Builder
 public class User {
 
     //1st
