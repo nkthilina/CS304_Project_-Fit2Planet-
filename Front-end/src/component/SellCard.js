@@ -26,4 +26,4 @@ const SellCard = () => {
     )
 }
 
-export default SellCard
+export default SellCard;

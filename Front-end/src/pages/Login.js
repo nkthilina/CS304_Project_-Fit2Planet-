@@ -2,9 +2,6 @@ import React from 'react';
 import './Style.css'
 
 const Login = () => {
-
-	
-
 	return (
 		<div class="login-bg-img d-flex justify-content-center align-items-center" >
 
@@ -59,4 +56,4 @@ const Login = () => {
 	)
 }
 
-export default Login
+export default Login;

@@ -10,6 +10,7 @@ import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -40,7 +41,7 @@ public class Package {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "packageId", referencedColumnName = "packageId")
-    private List<User> user;
+    private List<User> user = new ArrayList<>();
 
 
 }

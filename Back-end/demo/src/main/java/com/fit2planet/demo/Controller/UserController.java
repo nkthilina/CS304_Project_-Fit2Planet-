@@ -24,6 +24,7 @@ public class UserController {
     @GetMapping(value = "/getUser")
     public String getUser() {
         return "userDTO";
+//        return "User is given";
     }
 
 }

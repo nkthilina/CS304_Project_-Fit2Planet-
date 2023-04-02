@@ -5,8 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -16,9 +18,8 @@ import java.time.LocalTime;
 public class PackageDTO {
 
     private int packageId;
-
-    private LocalTime activatedTime;
-
-    private LocalDate activatedDate;
+    private Time activatedTime;
+    private Date activatedDate;
+    private int userId;
 
 }

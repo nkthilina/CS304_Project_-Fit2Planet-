@@ -107,4 +107,4 @@ const BmiCal = () => {
     )
 }
 
-export default BmiCal
+export default BmiCal;
