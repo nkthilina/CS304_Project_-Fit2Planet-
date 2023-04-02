@@ -1,0 +1,84 @@
+/* login page */
+.login-bg-img {
+    background-image: url(../assets/fitness.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
+/* ===============Regester page */
+.Regester-bg-img {
+    background-image: url(../assets/fitness.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 75vh;
+}
+
+.float-card {
+    margin-top: -425px;
+    background: hsla(0, 0%, 100%, 0.85);
+    backdrop-filter: blur(30px);
+    max-width: 50rem;
+
+}
+
+/* =======BMI Call Page */
+.Bmi-bg-color {
+    background-color: #f8fdff;
+}
+
+/* ===== Home Page ====== */
+#HomeFeatures {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+        url(../assets/Img/HomeImg/couple-fitness.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.HomeWelcome {
+    margin-top: -140px;
+}
+
+.HomeTestimonialsImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: -40px;
+    margin-left: -30px;
+    border: 5px solid #fff;
+    margin-bottom: 30px;
+}
+
+.testimonialsSpan {
+    color: #013f7e;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.review {
+    font-size: 16px;
+    padding: 10px 10px 10px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
+}
+
+.review .bi-twitter {
+    color: #013f7e;
+}
+
+.home-bg-img {
+    padding: 200px 0px ;
+    background-image: url(../assets/Img/HomeImg/Header.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ===== Home Page ====== */

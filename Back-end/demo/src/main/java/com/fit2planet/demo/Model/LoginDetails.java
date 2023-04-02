@@ -5,12 +5,12 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Data
-@Table(name = "login_details")
+//@Data
+@Table(name = "loginDetails")
 @Getter
 @Setter
 @AllArgsConstructor
-@Builder
+//@Builder
 public class LoginDetails {
 
     @Id
@@ -26,12 +26,12 @@ public class LoginDetails {
 
     @OneToOne
     @MapsId
-    @JoinColumn(name = "user_userId")
+    @JoinColumn(name = "userId", referencedColumnName = "userId")
     private User user;
 
     @OneToOne
     @MapsId
-    @JoinColumn(name = "coach_coachId")
+    @JoinColumn(name = "coachId", referencedColumnName = "coachId")
     private Coach coach;
 
 }

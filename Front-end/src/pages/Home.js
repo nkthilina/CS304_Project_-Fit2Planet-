@@ -17,6 +17,7 @@ const Home = () => {
 	return (
 		<div>
 			<NaveBar />
+			
 			<section className="home-bg-img mt-5">
 				<div className="container">
 					<div className="row text-light ">

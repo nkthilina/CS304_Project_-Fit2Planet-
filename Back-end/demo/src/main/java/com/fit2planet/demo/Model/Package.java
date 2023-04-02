@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
@@ -30,14 +32,15 @@ public class Package {
     @Column(name = "packageId")
     private int packageId;
 
+    @Column(name = "activatedTime")
+    private Time activatedTime;
 
-    private LocalTime activatedTime;
+    @Column(name = "activatedDate")
+    private Date activatedDate;
 
-    private LocalDate activatedDate;
-
-//    from user class
-//    @OneToMany(mappedBy = "package")
-//    private List<User> user;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "packageId", referencedColumnName = "packageId")
+    private List<User> user;
 
 
 }

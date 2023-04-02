@@ -47,13 +47,13 @@ public class User {
     @Column(name = "gender")
     private String gender;
 
-    @Column(name = "userName")
+    @Column(name = "userName", unique = true, nullable = false)
     private String username;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "password", unique = true, nullable = false)
     private String password;
 
     @Column(name = "mobileNumber")
@@ -91,9 +91,11 @@ public class User {
 
 
     @OneToMany(mappedBy = "user")
-    private List<Product> product;
+    private List<Product> product = new ArrayList<>();
 
-    //from package class
+    @OneToMany(mappedBy = "user")
+    private List<Payment> payment = new ArrayList<>();
+
 //    @ManyToOne
 //    @JoinColumn(name = "package" , nullable = false)
 //    private Package package;

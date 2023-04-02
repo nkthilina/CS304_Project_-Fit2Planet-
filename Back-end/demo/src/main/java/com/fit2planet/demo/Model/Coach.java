@@ -3,14 +3,17 @@ package com.fit2planet.demo.Model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-@Data
+//@Data
 @Table(name = "coach")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+//@Builder
 public class Coach {
 
     @Id
@@ -54,5 +57,11 @@ public class Coach {
     @OneToOne(mappedBy = "coach", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private LoginDetails loginDetails;
+
+    @OneToMany(mappedBy = "coach")
+    private List<Product> product = new ArrayList<>();
+
+    @OneToMany(mappedBy = "coach")
+    private List<Payment> payment = new ArrayList<>();
 
 }

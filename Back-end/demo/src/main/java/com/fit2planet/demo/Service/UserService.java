@@ -15,19 +15,15 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void addUser( UserDTO userDTO) {
-        User user = new User(
-                userDTO.getUserId(),
-                userDTO.getFirstName(),
-                userDTO.getLastName(),
-                userDTO.getAge(),
-                userDTO.getGender(),
-                userDTO.getUsername(),
-                userDTO.getEmail(),
-                userDTO.getPassword(),
-                userDTO.getMobileNumber(),
-                userDTO.getLocation());
-        userRepository.save(user);
-    }
+//    public void addUser( UserDTO userDTO) {
+//        User user = new User(
+//                userDTO.getUserId(),
+//                userDTO.getFirstName(),
+//                userDTO.getLastName(),
+//                userDTO.getAge(),
+//                userDTO.getGender(),
+//                userDTO.getLocation());
+//        userRepository.save(user);
+//    }
 
 }
