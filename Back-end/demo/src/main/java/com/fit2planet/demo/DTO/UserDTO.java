@@ -16,10 +16,6 @@ public class UserDTO {
     private String lastName;
     private int age;
     private String gender;
-//    private String username;
-//    private String email;
-//    private String password;
-//    private int mobileNumber;
     private String location;
 
 //    public UserDTO(int userId, String firstName, String lastName, int age) {

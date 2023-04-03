@@ -1,6 +1,6 @@
 package com.fit2planet.demo.Repository;
 
-import com.fit2planet.demo.Model.User;
+import com.fit2planet.demo.Model.Coach;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface CoachRepository extends JpaRepository<Coach, Integer> {
 
-    @Query("SELECT u FROM User u WHERE u.userId = ?1")
-    List<User> getUserByUserId(int id);
+//    @Query("SELECT * FROM Coach c WHERE c.coachId = ?1")
+//    List<Coach> getCoachByCoachId(int coachId);
 
 }

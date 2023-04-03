@@ -18,15 +18,10 @@ import java.util.Set;
 @Table(name = "package")
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 
 public class Package {
-
-//    @ManyToOne
-//    @JoinColumn(name = "userId", nullable = false)
-//    private User user;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,6 +33,16 @@ public class Package {
 
     @Column(name = "activatedDate")
     private Date activatedDate;
+
+    public Package() {
+    }
+
+    public Package(int packageId, Time activatedTime, Date activatedDate, List<User> user) {
+        this.packageId = packageId;
+        this.activatedTime = activatedTime;
+        this.activatedDate = activatedDate;
+        this.user = user;
+    }
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "packageId", referencedColumnName = "packageId")
