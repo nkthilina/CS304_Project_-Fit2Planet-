@@ -7,9 +7,9 @@ const BlogPost = () => {
     return (
         <div>
             <NaveBar />
-            <section className="py-3 px-2 px-lg-4 bg-light mt-5">
+            <section className="py-5 mt-5 px-2 bg-light ">
 
-                <div className="row gx-3 gy-3" data-masonry='{"percentPosition": true }'>
+                <div className="row gx-3 gy-3 mt-10" data-masonry='{"percentPosition": true }'>
 
                     <BlogCard />
                     <BlogCard />
@@ -28,4 +28,4 @@ const BlogPost = () => {
     )
 }
 
-export default BlogPost;
+export default BlogPost

@@ -9,8 +9,8 @@ const Sell = () => {
         <div>
             <NaveBar></NaveBar>
 
-            <section className="py-5">
-            <div className="container-lg">
+            <section className="py-5 mt-lg-5 ">
+            <div className="container-lg mt-10">
                 <div className="row g-5">
 
                     <div className="col-md-4 text-center">
@@ -60,7 +60,7 @@ const Sell = () => {
                                 </div>
                                 <div className="single-gd mb-5">
                                     <h4>Filter by <span className="text-orange">Price</span></h4>
-                                    <label for="customRange1" className="form-label">Example range</label>
+                                    <label htmlFor="customRange1" className="form-label">Example range</label>
                                     <input type="range" className="form-range" id="customRange1" />
 
                                 </div>
@@ -69,27 +69,27 @@ const Sell = () => {
                                     <h4>Discount </h4>
                                     <div>
                                         <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label className="form-check-label" for="flexCheckDefault"> 15% or More </label>
+                                        <label className="form-check-label" htmlFor="flexCheckDefault"> 15% or More </label>
                                     </div>
                                     <div>
                                         <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label className="form-check-label" for="flexCheckDefault"> 20% or More </label>
+                                        <label className="form-check-label" htmlFor="flexCheckDefault"> 20% or More </label>
                                     </div>
                                     <div>
                                         <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label className="form-check-label" for="flexCheckDefault"> 25% or More </label>
+                                        <label className="form-check-label" htmlFor="flexCheckDefault"> 25% or More </label>
                                     </div>
                                     <div>
                                         <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label className="form-check-label" for="flexCheckDefault"> 30% or More </label>
+                                        <label className="form-check-label" htmlFor="flexCheckDefault"> 30% or More </label>
                                     </div>
                                     <div>
                                         <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label className="form-check-label" for="flexCheckDefault"> 35% or More </label>
+                                        <label className="form-check-label" htmlFor="flexCheckDefault"> 35% or More </label>
                                     </div>
                                     <div>
                                         <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label className="form-check-label" for="flexCheckDefault"> 40% or More </label>
+                                        <label className="form-check-label" htmlFor="flexCheckDefault"> 40% or More </label>
                                     </div>
                                 </div>
 

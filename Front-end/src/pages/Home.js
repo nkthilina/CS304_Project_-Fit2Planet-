@@ -17,9 +17,8 @@ const Home = () => {
 	return (
 		<div>
 			<NaveBar />
-			
 			<section className="home-bg-img mt-5">
-				<div className="container">
+				<div className="container mt-10">
 					<div className="row text-light ">
 						<div className="col">
 							<h1 className="display-1 fw-bold">Sports Scheduling Software</h1>
@@ -342,4 +341,4 @@ const Home = () => {
 	)
 }
 
-export default Home;
+export default Home

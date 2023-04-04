@@ -1,14 +1,107 @@
-import React from 'react'
+
+import { useState, useEffect } from "react";
 import NaveBar from '../component/NaveBar';
 import Footer from '../component/Footer';
 
+import './Style.css'
+
 const BmiCal = () => {
+
+    let total
+    const [bmiValues, setBmiValues] = useState(
+        {
+            weight: "",
+            height: "",
+            age: "",
+            gender: "",
+
+        }
+    );
+
+    // const [massage, setMassage] = useState( '')
+    const [massage, setMassage] = useState(
+        {
+            Title: "",
+            discription: "",
+        }
+    )
+
+    const [bmi, setBmi] = useState('00.00')
+
+
+    function handleChange(params) {
+        const { name, value, type, checked } = params.target;
+        setBmiValues({
+            ...bmiValues,
+            [name]: type === 'checkbox' ? checked : value
+        });
+    }
+
+    function calBmi(params) {
+        params.preventDefault();
+
+        if (bmiValues.Weight === "" || bmiValues.height === "") {
+            alert('please Enter weight and hight')
+        } else {
+            setBmi((bmiValues.weight / ((bmiValues.height / 100) * (bmiValues.height / 100))).toFixed(2))
+
+            console.log(bmi);
+
+            if (total < 18.5) {
+                setMassage({ Title: 'You Are Under Weight' });
+            } else if (total >= 18.5 && total < 25) {
+                setMassage({ Title: 'You Are Good' });
+            } else if (total >= 25 && total < 30) {
+                setMassage({ Title: 'You Are Over Weight' });
+            } else {
+                setMassage({ Title: 'You Are You Are Obese' });
+            }
+
+        }
+
+    }
+
+    function bmiCategory(params) {
+
+        // if (params < 18.5) {
+        //     // setMassage('You Are Under Weight');
+        //     setMassage(
+
+        //         {
+        //             Title: "You Are Under Weight",
+        //             discription: "For an underweight person looking to achieve a healthy BMI, the focus should be on gradually increasing caloric intake through nutrient-dense foods such as lean proteins, whole grains, fruits, and vegetables. Aim to eat at least three meals per day with added snacks in between, and consider incorporating strength training exercises 2-3 times per week to build muscle mass. Limit cardio exercises to avoid burning excess calories. Additionally, getting enough sleep, managing stress, and staying hydrated are crucial for overall health. It is recommended to consult with a healthcare professional or registered dietitian to tailor a personalized plan that meets individual needs and goals.",
+        //         }
+
+        //     );
+        // } else if (params >= 18.5 && params < 25) {
+        //     // setMassage('You Are Good');
+        //     setMassage(
+        //         {
+        //             Title: "You Are Good",
+        //             discription: "Maintaining a healthy BMI requires a balanced approach to nutrition and physical activity. A healthy diet should include plenty of fruits, vegetables, whole grains, lean proteins, and healthy fats, while limiting processed and high-calorie foods. Engaging in regular exercise, including both cardio and strength training, is important for maintaining a healthy weight and supporting overall health. It is also important to prioritize good sleep hygiene, manage stress, and stay hydrated. Consultation with a healthcare professional or registered dietitian can help tailor a personalized plan that meets individual needs and goals.",
+        //         }
+        //     );
+        // } else if (params >= 25 && params < 30) {
+        //     setMassage('You Are Over Weight');
+        // } else {
+        //     setMassage('You Are Obese');
+        // }
+
+        // console.log(bmiValues);
+        // console.log(params);
+        // console.log(massage);
+
+
+    }
+
+
     return (
+
         <div>
             <NaveBar></NaveBar>
-            <section className="Bmi-bg-color mt-5" >
+            <section className="Bmi-bg-color mt-5 " >
 
-                <div className="container py-5 h-100">
+                <div className="container py-5 h-100 mt-10">
 
                     <div className="card rounded-5">
                         <div className="card-body ">
@@ -16,13 +109,13 @@ const BmiCal = () => {
 
                                 <div className="col-lg-5 text-center py-5">
                                     <h1 className="mb-5"> BMI Calculator </h1>
-                                    <form action="">
+                                    <form action="" onSubmit={calBmi}>
                                         <div className="row mb-3">
 
                                             <div className="col-12">
                                                 <div className="  bg-light rounded-5 p-3">
                                                     <h5>Age</h5>
-                                                    <input className="form-control" type="text" />
+                                                    <input className="form-control" name='age' value={bmiValues.age} onChange={handleChange} type="number" />
                                                 </div>
                                             </div>
                                         </div>
@@ -30,16 +123,14 @@ const BmiCal = () => {
                                             <div className="col-6">
                                                 <div className="  bg-light rounded-5 p-3">
                                                     <h5>Male</h5>
-                                                    <input className="form-check-input h2" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1" />
+                                                    <input className="form-check-input h2" type="radio" onChange={handleChange} name="gender" value="Male" />
 
                                                 </div>
                                             </div>
                                             <div className="col-6">
                                                 <div className="  bg-light rounded-5 p-3">
                                                     <h5>Fmale</h5>
-                                                    <input className="form-check-input h2" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1" />
+                                                    <input className="form-check-input h2" type="radio" onChange={handleChange} name="gender" value="FMale" />
                                                 </div>
                                             </div>
                                         </div>
@@ -47,13 +138,13 @@ const BmiCal = () => {
                                             <div className="col-6">
                                                 <div className="  bg-light rounded-5 p-3">
                                                     <h5>Height(Cm)</h5>
-                                                    <input className="form-control" type="text" />
+                                                    <input className="form-control" name='height' value={bmiValues.height} onChange={handleChange} type="number" />
                                                 </div>
                                             </div>
                                             <div className="col-6">
                                                 <div className="  bg-light rounded-5 p-3">
                                                     <h5>Weight(Kg)</h5>
-                                                    <input className="form-control" type="text" />
+                                                    <input className="form-control" name='weight' value={bmiValues.weight} onChange={handleChange} type="number" />
                                                 </div>
                                             </div>
                                         </div>
@@ -61,7 +152,7 @@ const BmiCal = () => {
                                         <div className="row mb-3">
                                             <div className="col-12">
                                                 <div className=" border border-primary bg-light rounded-pill py-4 mx-5">
-                                                    <h2 className="text-primary">20.50</h2>
+                                                    <h2 className="text-primary"> {bmi} </h2>
                                                 </div>
                                             </div>
 
@@ -69,7 +160,7 @@ const BmiCal = () => {
                                         <div className="row mb-3">
                                             <div className="col-12">
                                                 <div className="d-grid px-5 py-3">
-                                                    <button className="btn btn-lg btn-primary rounded-pill" type="button">Button</button>
+                                                    <button className="btn btn-lg btn-primary rounded-pill" type="submit"> Calculate </button>
                                                 </div>
                                             </div>
 
@@ -78,18 +169,11 @@ const BmiCal = () => {
                                 </div>
 
                                 <div className="col-lg-7 text-center py-5">
-                                    <h3 className="mb-5">We are more than just a company</h3>
+
+
+                                    <h3 className="mb-5"> {massage.Title} </h3>
                                     <p className="small">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis tempore illum
-                                        laboriosam eaque repudiandae possimus vitae, impedit hic voluptatum laudantium
-                                        iusto ut voluptatibus numquam quas nemo autem pariatur, sint quia odit a illo!
-                                        Eius culpa, delectus labore, quo dicta eum reprehenderit, cum sunt sed deleniti
-                                        accusantium! Earum laudantium at hic ipsa dolor id culpa ex voluptas consequatur
-                                        voluptatibus, in qui omnis quis nihil quisquam voluptate impedit eligendi iure
-                                        deleniti, nobis incidunt doloribus velit. At iusto distinctio minus saepe amet
-                                        sint illo nisi explicabo neque molestias. Temporibus minima doloremque porro
-                                        neque veniam? Voluptatem facilis deleniti numquam explicabo quae quia vero
-                                        molestias?
+
                                     </p>
                                 </div>
 
@@ -101,10 +185,11 @@ const BmiCal = () => {
                 </div>
             </section>
 
+
             <Footer></Footer>
         </div>
 
     )
 }
 
-export default BmiCal;
+export default BmiCal

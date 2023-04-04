@@ -1,47 +1,87 @@
 import React from 'react';
+import { useState, useEffect } from "react";
+
 import './Style.css'
 
 const Login = () => {
+
+	const initialValues = { email: "", password: "" };
+	const [formValues, setFormValues] = useState(initialValues);
+	const initialError = { email: 'Email is required!', password: 'Password is required' };
+	const [formErrors, setFormErrors] = useState(initialError);
+	const [isSubmit, setIsSubmit] = useState(false);
+
+	useEffect( () => {
+		if (Object.keys(formErrors).length === 0 && isSubmit) {
+		}
+	}, [formErrors]);
+
+
+	function handleChange(params) {
+		const { name, value } = params.target;
+		setFormValues({ ...formValues, [name]: value });
+		console.log(formValues);
+	}
+
+	function handleSubmit(params) {
+		params.preventDefault();
+		setFormErrors(validate(formValues));
+		setIsSubmit(true);
+	}
+
+	function validate(values) {
+		const errors = {};
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+		if (!values.email) {
+			errors.email = "Email is required!";
+
+		} else if (!emailRegex.test(values.email)) {
+			errors.email = "not a valid email";
+		}
+		if (!values.password) {
+			errors.password = "Password is required";
+		} else if (values.password.length <= 4) {
+			errors.password = "Password must be more than 4 characters";
+		}
+		return errors;
+
+	}
+
+
+
 	return (
-		<div class="login-bg-img d-flex justify-content-center align-items-center" >
+		<div className="login-bg-img d-flex justify-content-center align-items-center" >
 
-		
-			<div class="card " >
 
-				<div class="card-body p-5">
-					<form className="needs-validation">
-						<h2 class=" mb-5 text-center ">Login to Your Account</h2>
+			<div className="card " >
 
-						<div class="form-floating mb-4">
-							<input type="text" class="form-control is-valid" placeholder=" " />
-							<label class="form-label" for="form3Example3"> Email address </label>
-							<div class="valid-feedback">
-								Looks good!
+				<div className="card-body p-5">
+					<form className="needs-validation" onChange={handleSubmit}>
+						<h2 className=" mb-5 text-center ">Login to Your Account</h2>
+
+						<div className="form-floating mb-4">
+							<input type="email" className={`form-control ${!formErrors.email ? 'is-valid' : 'is-invalid'}`} placeholder=" " name="email" value={formValues.email} onChange={handleChange} />
+							<label className="form-label" htmlFor="form3Example3"> Email address </label>
+							<div className="text-danger">
+								{formErrors.email}
 							</div>
 						</div>
 
-						<div class="form-floating mb-4">
-							<input type="text" class="form-control is-valid" placeholder=" " />
-							<label class="form-label" for="form3Example4"> Password </label>
-							<div class="valid-feedback">
-								Looks good!
+						<div className="form-floating mb-4">
+							<input type="Password" className={`form-control ${!formErrors.password ? 'is-valid' : 'is-invalid'}`} placeholder=" " name="password" value={formValues.password} onChange={handleChange} />
+							<label className="form-label" htmlFor="form3Example4"> Password </label>
+							<div className="text-danger">
+								{formErrors.password}
 							</div>
 						</div>
 
-						<div class="form-floating mb-5">
-							<input type="text" class="form-control is-valid" placeholder=" " />
-							<label class="form-label" for="form3Example4"> Password </label>
-							<div class="valid-feedback">
-								Looks good!
-							</div>
-						</div>
-
-						<div class="d-grid mb-2">
-							<button type="submit" class="btn btn-primary btn-block ">
+						<div className="d-grid mb-2">
+							<button type="submit" className="btn btn-primary btn-block ">
 								Sign up
 							</button>
 						</div>
-						<p class="text-light">
+						<p className="text-light">
 							Lorem ipsum dolor sit consectetur adipisicing elit.
 						</p>
 
@@ -56,4 +96,4 @@ const Login = () => {
 	)
 }
 
-export default Login;
+export default Login
