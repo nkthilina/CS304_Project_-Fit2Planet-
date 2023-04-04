@@ -47,8 +47,8 @@ public class User {
     @Column(name = "gender")
     private String gender;
 
-    @Column(name = "userName", unique = true, nullable = false)
-    private String username;
+//    @Column(name = "userName", unique = true, nullable = false)
+//    private String username;
 
     @Column(name = "email", unique = true, nullable = false)
     private String email;
@@ -71,7 +71,6 @@ public class User {
                 String lastName,
                 int age,
                 String gender,
-                String username,
                 String email,
                 String password,
                 int mobileNumber,
@@ -82,7 +81,6 @@ public class User {
         this.lastName = lastName;
         this.age = age;
         this.gender = gender;
-        this.username = username;
         this.email = email;
         this.password = password;
         this.mobileNumber = mobileNumber;
@@ -104,5 +102,10 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private LoginDetails loginDetails;
+
+//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+//    @MapsId
+//    @JoinColumn(name = "loginId", referencedColumnName = "loginId")
+//    private LoginDetails loginDetails;
 
 }

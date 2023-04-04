@@ -33,13 +33,13 @@ public class Coach {
     @Column(name = "gender")
     private String gender;
 
-    @Column(name = "userName")
-    private String username;
+//    @Column(name = "userName")
+//    private String username;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "password", unique = true, nullable = false)
     private String password;
 
     @Column(name = "mobileNumber")

@@ -18,10 +18,4 @@ public class UserDTO {
     private String gender;
     private String location;
 
-//    public UserDTO(int userId, String firstName, String lastName, int age) {
-//        this.userId = userId;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.age = age;
-//    }
 }

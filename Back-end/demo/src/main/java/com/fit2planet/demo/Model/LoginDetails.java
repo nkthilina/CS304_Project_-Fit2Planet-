@@ -5,12 +5,12 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-//@Data
+@Data
 @Table(name = "loginDetails")
 @Getter
 @Setter
 @AllArgsConstructor
-//@Builder
+@Builder
 public class LoginDetails {
 
     @Id
@@ -25,12 +25,10 @@ public class LoginDetails {
     private String password;
 
     @OneToOne
-    @MapsId
     @JoinColumn(name = "userId", referencedColumnName = "userId")
     private User user;
 
     @OneToOne
-    @MapsId
     @JoinColumn(name = "coachId", referencedColumnName = "coachId")
     private Coach coach;
 

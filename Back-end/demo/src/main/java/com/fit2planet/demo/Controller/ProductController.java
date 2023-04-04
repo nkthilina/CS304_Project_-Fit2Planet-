@@ -1,5 +1,6 @@
 package com.fit2planet.demo.Controller;
 
+import com.fit2planet.demo.DTO.ProductDTO;
 import com.fit2planet.demo.Model.Product;
 import com.fit2planet.demo.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/product")
+@RequestMapping("/api/v1")
 @CrossOrigin
 public class ProductController {
 
@@ -32,6 +33,10 @@ public class ProductController {
     public List<Product> findAllProducts() {
         return productService.getProducts();
     }
+
+//    public List<ProductDTO> findAllProducts() {
+//        return productService.getProducts();
+//    }
     @GetMapping("/getProductByName/{productName}")
     public Product findByProductName(@PathVariable String productName) {
         return productService.getByProductName(productName);
@@ -46,4 +51,20 @@ public class ProductController {
     public String deleteProduct(@PathVariable int productId) {
         return productService.deleteProduct(productId);
     }
+
+
+
+    //with DTO package
+    @GetMapping("/getPAll")
+    public List<ProductDTO> getDTOProducts() {
+        return productService.getDTOProducts();
+    }
+
+    @PostMapping("/add")
+    public boolean addProduct(@RequestBody ProductDTO productDTO) {
+        productService.addProduct(productDTO);
+        return true;
+
+    }
+
 }
