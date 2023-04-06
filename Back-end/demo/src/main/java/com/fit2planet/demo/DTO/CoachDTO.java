@@ -16,6 +16,9 @@ public class CoachDTO {
     private String lastName;
     private int age;
     private String gender;
+    private String email;
+    private String password;
+    private Integer mobileNumber;
     private String location;
     private int yearOfExperience;
     private String certificates;

@@ -1,13 +1,13 @@
 import React from 'react'
 
-import NaveBar from '../component/NaveBar';
+import NavBar from '../component/NavBar';
 import Footer from '../component/Footer';
 import SellCard from '../component/SellCard';
 
 const Sell = () => {
     return (
         <div>
-            <NaveBar></NaveBar>
+            <NavBar></NavBar>
 
             <section className="py-5 mt-lg-5 ">
             <div className="container-lg mt-10">

@@ -4,11 +4,11 @@ import com.fit2planet.demo.DTO.UserDTO;
 import com.fit2planet.demo.Model.User;
 import com.fit2planet.demo.Repository.UserRepository;
 import jakarta.transaction.Transactional;
-import org.jetbrains.annotations.NotNull;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
@@ -19,35 +19,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-//    @Autowired
-//    private ModelMapper modelMapper;
-
     private final ModelMapper modelMapper = new ModelMapper();
 
-//    public List<User> getUserOf(int id) {
-//
-//    }
 
-//    public void addUser( UserDTO userDTO) {
-//        User user = new User(
-//                userDTO.getUserId(),
-//                userDTO.getFirstName(),
-//                userDTO.getLastName(),
-//                userDTO.getAge(),
-//                userDTO.getGender(),
-//                userDTO.getLocation());
-//        userRepository.save(user);
-//    }
-
-
-//    public void addDriver(UserDTO userDTO){
-//        try {
-//            User u = modelMapper.map(userDTO,User.class);
-//            userRepository.save(u);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     public void addUser(UserDTO userDTO){
         User u = modelMapper.map(userDTO,User.class);
@@ -59,31 +33,33 @@ public class UserService {
         return modelMapper.map(userList,new TypeToken<List<UserDTO>>(){}.getType());
     }
 
-    public void deleteUserById(Integer userId){
+    public User getUserByUserId(Integer userId) {
+        return userRepository.getUserByUserId(userId);
+    }
+
+    public void deleteUserByUserId(Integer userId){
         userRepository.deleteById(userId);
     }
 
-//    public void updateDUser(String firstName,
-//                            String lastName,
-//                            int age,
-//                            String gender,
-//                            String email,
-//                            String password,
-//                            int mobileNumber,
-//                            String location) {
-//
-//        User user = userRepository.getUserByUserId(u);
-//
-//        user.setFirstName(firstName);
-//        user.setLastName(lastName);
-//        user.setAge(age);
-//        user.setGender(gender);
-//        user.setEmail(email);
-//        user.setPassword(password);
-//        user.setMobileNumber(mobileNumber);
-//        user.setLocation(location);
-//
-//    }
+    public void updateUser(Integer userId,
+                             String firstName,
+                             String lastName,
+                             Integer age,
+                             String gender,
+                             String email,
+                             String password,
+                             Integer mobileNumber,
+                             String location) {
+        User user = userRepository.getReferenceById(userId);
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setAge(age);
+        user.setGender(gender);
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setMobileNumber(mobileNumber);
+        user.setLocation(location);
+    }
 
 
 }

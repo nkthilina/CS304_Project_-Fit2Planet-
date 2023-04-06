@@ -1,6 +1,6 @@
 import React from 'react'
 
-import NaveBar from '../component/NaveBar';
+import NavBar from '../component/NavBar';
 import Footer from '../component/Footer';
 
 import UserImg from '../assets/Img/HomeImg/user.jpg';
@@ -16,7 +16,7 @@ import './Style.css'
 const Home = () => {
 	return (
 		<div>
-			<NaveBar />
+			<NavBar />
 			<section className="home-bg-img mt-5">
 				<div className="container mt-10">
 					<div className="row text-light ">

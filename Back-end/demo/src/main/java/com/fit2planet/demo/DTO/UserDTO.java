@@ -11,11 +11,14 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class UserDTO {
-    private int userId;
+    private Integer userId;
+    private String email;
     private String firstName;
     private String lastName;
-    private int age;
+    private Integer age;
     private String gender;
+    private String password;
+    private Integer mobileNumber;
     private String location;
 
 }

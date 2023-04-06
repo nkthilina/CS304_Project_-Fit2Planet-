@@ -1,12 +1,12 @@
 import React from 'react';
-import NaveBar from '../component/NaveBar';
+import NavBar from '../component/NavBar';
 import Footer from '../component/Footer';
 import BlogCard from '../component/BlogCard';
 
 const BlogPost = () => {
     return (
         <div>
-            <NaveBar />
+            <NavBar />
             <section className="py-5 mt-5 px-2 bg-light ">
 
                 <div className="row gx-3 gy-3 mt-10" data-masonry='{"percentPosition": true }'>

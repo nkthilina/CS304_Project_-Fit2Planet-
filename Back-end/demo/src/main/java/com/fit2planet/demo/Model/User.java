@@ -33,7 +33,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userId")
-    private int userId;
+    private Integer userId;
 
     @Column(name = "firstName")
     private String firstName;
@@ -42,7 +42,7 @@ public class User {
     private String lastName;
 
     @Column(name = "age")
-    private int age;
+    private Integer age;
 
     @Column(name = "gender")
     private String gender;
@@ -57,7 +57,7 @@ public class User {
     private String password;
 
     @Column(name = "mobileNumber")
-    private int mobileNumber;
+    private Integer mobileNumber;
 
     @Column(name = "location")
     private String location;
@@ -66,14 +66,14 @@ public class User {
 //
 //    }
 
-    public User(int userId,
+    public User(Integer userId,
                 String firstName,
                 String lastName,
-                int age,
+                Integer age,
                 String gender,
                 String email,
                 String password,
-                int mobileNumber,
+                Integer mobileNumber,
                 String location) {
 
         this.userId = userId;

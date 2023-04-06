@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NaveBar = () => {
+const NavBar = () => {
 
     return (
         <header className="p-2 bg-dark text-white fixed-top ">
@@ -12,7 +12,7 @@ const NaveBar = () => {
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                         <li><a href="/Login" className="nav-link px-2 text-white">Login</a></li>
-                        <li><a href="/Regester" className="nav-link px-2 text-white">Regester</a></li>
+                        <li><a href="/Regester" className="nav-link px-2 text-white">Register</a></li>
                         <li><a href="/BlogPost" className="nav-link px-2 text-white">BlogPost</a></li>
                         <li><a href="/Sell" className="nav-link px-2 text-white">Sell</a></li>
                         <li><a href="/BmiCal" className="nav-link px-2 text-white">BmiCal</a></li>
@@ -47,4 +47,4 @@ const NaveBar = () => {
     )
 }
 
-export default NaveBar
+export default NavBar

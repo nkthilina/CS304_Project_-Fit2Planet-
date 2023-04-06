@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-//@Data
+@Data
 @Table(name = "coach")
 @Getter
 @Setter
@@ -49,7 +49,7 @@ public class Coach {
     private String location;
 
     @Column(name = "yearOfExperience")
-    private int yearOfExperience;
+    private Integer yearOfExperience;
 
     @Column(name = "certificates")
     private String certificates;
