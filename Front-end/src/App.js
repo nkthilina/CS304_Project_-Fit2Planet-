@@ -7,6 +7,7 @@ import Sell from './pages/Sell';
 import Home from './pages/Home';
 import BmiCal from './pages/BmiCal';
 import Test from "./pages/Test";
+import UserDetails from "./pages/UserDetails";
 
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
 					<Route path="/Home" element={<Home />} />
 					<Route path="/BmiCal" element={<BmiCal />} />
 					<Route path="/Test" element={<Test />} />
+					<Route path="/UserDetails" element={<UserDetails />} />
+					<Route path="/add-user" element={<Regester />} />
+					<Route path="/edit-user" element={<Regester />} />
+					<Route path="/add-user" element={<Regester />} />
 				</Routes>
 			</Router>
 

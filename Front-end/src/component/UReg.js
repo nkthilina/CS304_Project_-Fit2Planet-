@@ -60,6 +60,31 @@ const UReg = () => {
   }
   console.log(firstName);
 
+  //------------------------------------
+
+  // useEffect(() => {
+  //   EmployeeServices.getEmployeeById(id)
+  //     .then((response) => {
+  //       setFirstName(response.data.firstName);
+  //       setLastName(response.data.lastName);
+  //       setEmailId(response.data.emailId);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
+
+  // const title = () => {
+  //   if (id) {
+  //     return <h2 className="text-center">Update Employee</h2>;
+  //   } else {
+  //     return <h2 className="text-center">Add Employee</h2>;
+  //   }
+  // };
+
+
+  //--------------------------------------
+
   return (
     <form className="row g-3 needs-validation">
       <div className="col-md-6 form-group was-validated mb-2">

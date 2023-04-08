@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -61,5 +62,11 @@ public class UserService {
         user.setLocation(location);
     }
 
+//----------------------------------------------------
+    public Optional<Object> findById(Integer userId) {
+        return true;
+    }
 
+    public void save(UserDTO updateUser) {
+    }
 }

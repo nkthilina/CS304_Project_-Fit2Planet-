@@ -3,6 +3,7 @@ import React from "react";
 import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 
+
 import UserImg from "../assets/Img/HomeImg/user.jpg";
 import PostImg from "../assets/Img/HomeImg/Single man.jpg";
 
