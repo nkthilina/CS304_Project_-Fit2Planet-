@@ -24,6 +24,10 @@ public class LoginDetails {
     @Column(name = "password")
     private String password;
 
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
+//    private User user;
+
     @OneToOne
     @JoinColumn(name = "userId", referencedColumnName = "userId")
     private User user;

@@ -5,7 +5,7 @@ import CReg from '../component/CReg';
 
 import './Style.css'
 
-const Regester = () => {
+const Register = () => {
 
 
     return (
@@ -23,12 +23,12 @@ const Regester = () => {
                             <li className="nav-item" role="presentation">
                                 <button className="nav-link active border border-primary py-3 h2" id="pills-home-tab"
                                     data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab"
-                                    aria-controls="pills-home" aria-selected="true"> Student </button>
+                                    aria-controls="pills-home" aria-selected="true"> User </button>
                             </li>
                             <li className="nav-item" role="presentation">
                                 <button className="nav-link border border-primary py-3 h2" id="pills-profile-tab"
                                     data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"
-                                    aria-controls="pills-profile" aria-selected="false"> Teacher </button>
+                                    aria-controls="pills-profile" aria-selected="false"> Coach </button>
                             </li>
 
                         </ul>
@@ -51,6 +51,7 @@ const Regester = () => {
                             </div>
 
                         </div>
+                        
 
 
                     </div>
@@ -61,4 +62,4 @@ const Regester = () => {
     )
 }
 
-export default Regester
+export default Register

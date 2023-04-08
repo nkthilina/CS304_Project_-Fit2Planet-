@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import './Style.css'
 
@@ -58,7 +59,7 @@ const Login = () => {
 
 				<div className="card-body p-5">
 					<form className="needs-validation" onChange={handleSubmit}>
-						<h2 className=" mb-5 text-center ">Login to Your Account</h2>
+						<h2 className=" mb-5 text-center ">LogIn to your account</h2>
 
 						<div className="form-floating mb-4">
 							<input type="email" className={`form-control ${!formErrors.email ? 'is-valid' : 'is-invalid'}`} placeholder=" " name="email" value={formValues.email} onChange={handleChange} />
@@ -75,14 +76,18 @@ const Login = () => {
 								{formErrors.password}
 							</div>
 						</div>
-
+						<div className='form-group-mb-2'>
+							<input type="checkbox" className='form-check-input' />
+							<label htmlFor="check" className='form-check-label1'>Remember me</label>
+						</div>
 						<div className="d-grid mb-2">
 							<button type="submit" className="btn btn-primary btn-block ">
-								Sign up
+								Log In
 							</button>
 						</div>
-						<p className="text-light">
-							Lorem ipsum dolor sit consectetur adipisicing elit.
+						<p className="text-secondary">
+							Don't have an account. <Link to={"/Regester"}>Sign Up</Link> here
+							
 						</p>
 
 

@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface PackageRepository extends JpaRepository<Package, Integer> {
+    Package getPackageByPackageId(Integer packageId);
 
 //    @Query()
 //    List<Package> getPackages(int packageId);
