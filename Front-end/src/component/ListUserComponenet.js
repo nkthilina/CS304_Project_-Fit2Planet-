@@ -53,10 +53,16 @@ const ListUserComponent = () => {
               <td>
                 <Link
                   className="btn btn-info"
-                  to={`/edit-user/${user.userId}`}
+                  to={`/edit-user`}
                 >
                   Update
                 </Link>
+                {/* <Link
+                  className="btn btn-info"
+                  to={`/edit-user/${user.userId}`}
+                >
+                  Update
+                </Link> */}
                 <button
                   className="btn btn-danger"
                   onClick={() => deleteUser(user.userId)}

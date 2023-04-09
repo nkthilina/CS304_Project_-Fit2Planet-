@@ -15,7 +15,7 @@ import java.util.List;
 
 @Controller
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000/"})
+@CrossOrigin(origins = {"http://localhost:3000"})
 @RequestMapping(value = "/api/v1/user")
 public class UserController {
 
@@ -36,42 +36,10 @@ public class UserController {
     }
 
     @GetMapping("/get/{userId}")
-    public User getUserByUserId(@PathVariable Integer userId) {
+    public User getUserByUserId(@PathVariable int userId) {
         return userService.getUserByUserId(userId);
     }
 
-//----------------------
-    @GetMapping("{id}")
-    public ResponseEntity<Integer> getUserById(@PathVariable Integer userId){
-        userService.findById(userId).orElseThrow(()->new ResourceNotFoundException("User not with the id: " + userId));
-        return ResponseEntity.ok(userId);
-    }
-
-    @PutMapping("{id}")
-    public ResponseEntity<UserDTO> updateUserById(@PathVariable Integer userId ,@RequestBody UserDTO employeeDetails){
-        UserDTO updateUser = userService.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User not exist with the id: " + userId));
-
-        updateUser.setFirstName(employeeDetails.getFirstName());
-        updateUser.setLastName(employeeDetails.getLastName());
-        updateUser.setEmail(employeeDetails.getEmail());
-
-        userService.save(updateUser);
-        return ResponseEntity.ok(updateUser);
-    }
-
-    @DeleteMapping("{id}")
-    public ResponseEntity<HttpStatus> deleteUser(@PathVariable Integer userId){
-
-        UserDTO userDTO = userService.findById(userId).orElseThrow(()-> new ResourceNotFoundException("EMployee not exist with the id " + id));
-
-        Integer user;
-        userService.deleteUserByUserId(user);
-
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
-    }
-
- //---------------------------
 
     @DeleteMapping("/delete/{userId}")
     public String deleteUserByUserId(@PathVariable Integer userId){

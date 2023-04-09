@@ -3,7 +3,6 @@ import React from "react";
 import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 
-
 import UserImg from "../assets/Img/HomeImg/user.jpg";
 import PostImg from "../assets/Img/HomeImg/Single man.jpg";
 
@@ -11,7 +10,7 @@ import Carosal1 from "../assets/Img/HomeImg/Carosal/Carosal 1.jpg";
 import Carosal2 from "../assets/Img/HomeImg/Carosal/Carosal 2.jpg";
 import Carosal3 from "../assets/Img/HomeImg/Carosal/Carosal 3.jpg";
 import Carosal4 from "../assets/Img/HomeImg/Carosal/Carosal 4.jpg";
-
+import { FaUserAlt, FaDumbbell, FaClock, FaChild,FaSwimmer,FaTableTennis,FaGolfBall,FaShoppingCart,FaTrophy,FaHeartbeat,FaCalendarCheck } from "react-icons/fa";
 import "./Style.css";
 import { Link } from "react-router-dom";
 
@@ -23,22 +22,22 @@ const Home = () => {
         <div className="container mt-10">
           <div className="row text-light ">
             <div className="col">
-              <h1 className="display-1 fw-bold">Sports Scheduling Software</h1>
+              <h1 className="display-2 ">Sports Scheduling Software</h1>
               <h3 className="">
                 for gyms, personal trainers, yoga studios <br />
-                and sports more
+                and sports more ....
               </h3>
               <button
                 type="submit"
-                className="btn btn-warning py-2 px-4 me-2"
+                className="btn btn-md btn-light px-4 m-3"
                 // disabled
               >
-                <Link to={"/Regester"}>Get a Free Account</Link>
+                <a href="/Regester" className="nav-link px-1 text-secondary">GET A MEMBERSHIP</a>
               </button>
               <button
                 type="submit"
                 className="btn btn-secondary py-2 px-4"
-                disabled
+                disabled 
               >
                 be excited
               </button>
@@ -59,10 +58,7 @@ const Home = () => {
               type="submit"
               className="btn btn-primary py-2 px-5 rounded-pill"
             >
-              <Link to={"/Regester"}>
-                {" "}
-                <p className="text-white "> Submit</p>{" "}
-              </Link>
+              <a href="/Regester" className="nav-link px-1 text-white">Join</a>
             </button>
           </div>
         </div>
@@ -187,7 +183,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-3">
+      <section className="carousel">
         <div
           id="carouselExampleCaptions"
           className="carousel slide"
@@ -302,50 +298,53 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-5 bg-light">
+      <section className="py-5 services">
         <div className="container">
           <div className="mb-4 text-center">
-            <h1> Black-Belt </h1>
+            <h1> Services </h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Laboriosam, dignissimos{" "}
             </p>
           </div>
 
-          <div className="row text-center p-md-5">
-            <div className="col-3">
-              <i className="bi bi-person-square display-5"></i>
+          <div className="row text-center p-md-3">
+          <div className="col-md-2" />
+            <div className="col-md-2">
+            <FaUserAlt className="fa" />
               <p>Personal trainers</p>
             </div>
-            <div className="col-3">
-              <i className="bi bi-person-square display-5"></i>
+            <div className="col-md-2">
+            <FaDumbbell className="fa" />
               <p>Gyms</p>
             </div>
-            <div className="col-3">
-              <i className="bi bi-smartwatch display-5"></i>
-              <p>Fitness classNamees</p>
+            <div className="col-md-2">
+            <FaClock className="fa" />
+              <p>Fitness classes</p>
             </div>
-            <div className="col-3">
-              <i className="bi bi-person-square display-5"></i>
-              <p>Yoga classNamees</p>
+            <div className="col-md-2">
+            <FaChild className="fa" />
+              <p>Yoga classes</p>
             </div>
+            
           </div>
 
-          <div className="row text-center p-md-5">
-            <div className="col-3">
-              <i className="bi bi-xbox display-5"></i>
+          <div className="row text-center p-md-3">
+          <div className="col-md-2" />
+            <div className="col-md-2">
+            <FaSwimmer className="fa" />
               <p>Swimming</p>
             </div>
-            <div className="col-3">
-              <i className="bi bi-xbox display-5"></i>
+            <div className="col-md-2">
+            <FaTableTennis className="fa" />
               <p>Badminton</p>
             </div>
-            <div className="col-3">
-              <i className="bi bi-xbox display-5"></i>
-              <p>Golf classNamees</p>
+            <div className="col-md-2">
+            <FaGolfBall className="fa" />
+              <p>Golf classes</p>
             </div>
-            <div className="col-3">
-              <i className="bi bi-cart-check display-5"></i>
+            <div className="col-md-2">
+            <FaShoppingCart className="fa" />
               <p className="text-align-center">
                 {" "}
                 Purchase <br />
@@ -364,7 +363,7 @@ const Home = () => {
             <div className="col-md-6 ">
               <div className="row py-4">
                 <div className="col-2">
-                  <i className="bi bi-trophy-fill display-3"></i>
+                <FaTrophy className="fa" />
                 </div>
                 <div className="col-10">
                   <h4>Certified Trainers</h4>
@@ -373,7 +372,7 @@ const Home = () => {
               </div>
               <div className="row py-4">
                 <div className="col-2">
-                  <i className="bi bi-heart-pulse-fill display-3"></i>
+                <FaHeartbeat className="fa" />
                 </div>
                 <div className="col-10">
                   <h4>Free Consultatnt</h4>
@@ -382,7 +381,7 @@ const Home = () => {
               </div>
               <div className="row py-4">
                 <div className="col-2">
-                  <i className="bi bi-calendar2-check display-3"></i>
+                <FaCalendarCheck className="fa" />
                 </div>
                 <div className="col-10">
                   <h4>Flexible Time</h4>
@@ -399,7 +398,7 @@ const Home = () => {
           <div className=" text-center py-3">
             <h1> Meet Our Users </h1>
             <p className="">
-              HEre u are .Go on. full of happiness in the enjoyable way.
+            Few feedbacks of our fewest out of many satisfied customers.
             </p>
           </div>
 

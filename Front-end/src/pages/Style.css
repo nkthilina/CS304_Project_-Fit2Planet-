@@ -83,14 +83,38 @@
 }
 
 .home-bg-img {
-    padding: 200px 0px ;
+    margin-top: 100px;
+    padding: 150px 0px ;
     background-image: url(../assets/Img/HomeImg/Header.jpg);
-    background-position: center;
+    /* background-position: center; */
+    background-position-y:0px 1000px;
     background-repeat: no-repeat;
     background-size: cover;
+     font-family: "PT Sans", sans-serif;
+     box-sizing: border-box;
 }
 
 /* ===== Sell Page ====== */
 .text-orange{
     color: #ff7315;
 }
+
+.mt-10 {
+    margin-top: 160px;
+  }
+
+.services {
+    background-color: #d1cbcb;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .col-md-2 {
+    padding: 20px;
+  }
+  .p {
+    padding: 5px;
+  }
+  .fa {
+    height: 50px;
+    width: 50px;
+  }

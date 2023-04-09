@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import BmiCal from './pages/BmiCal';
 import Test from "./pages/Test";
 import UserDetails from "./pages/UserDetails";
+import UpdateForm from "./pages/UpdateForm";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 					<Route path="/BmiCal" element={<BmiCal />} />
 					<Route path="/Test" element={<Test />} />
 					<Route path="/UserDetails" element={<UserDetails />} />
+					<Route path="/UpdateForm" element={<UpdateForm />} />
 					<Route path="/add-user" element={<Regester />} />
 					<Route path="/edit-user" element={<Regester />} />
 					<Route path="/add-user" element={<Regester />} />
