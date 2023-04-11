@@ -14,11 +14,11 @@ const UpdateForm = () => {
 
   return (
     <section className="bg-color-gra bg-light pb-5">
-      <div className="Regester-bg-img"></div>
+      <div className="UpdateForm-bg-img"></div>
 
       <div className="card float-card mx-md-auto shadow-5-strong rounded-3">
         <div className="card-body p-5">
-          <h1 className="fw-bold mb-5"> For Admin Use </h1>
+          <h1 className="fw-bold mb-5"> For Updates </h1>
           <div className="">
             <ul
               className="nav nav-pills nav-fill mb-3"

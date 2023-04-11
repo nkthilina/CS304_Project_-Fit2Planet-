@@ -7,9 +7,20 @@
     } 
 }
 
-/* login page */
+/*==================== Footer */
+.icon {
+    height: 40px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.col-md-4 .FooterFa {
+    margin-right: 30px;
+}
+
+/*==================== login page */
 .login-bg-img {
-    background-image: url(../assets/fitness.jpg);
+    background-image: url(../assets/Img/Login/Simeon-Panda.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,9 +28,18 @@
 }
 
 
-/* ===============Regester page */
+/* ===============Register page */
 .Regester-bg-img {
-    background-image: url(../assets/fitness.jpg);
+    background-image: url(../assets/Img/Registration/Girl-back.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 75vh;
+}
+
+/* ===============UpdateForm page */
+.UpdateForm-bg-img {
+    background-image: url(../assets/Img/Admin/Hybrid-gym.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -36,7 +56,7 @@
 
 /* =======BMI Call Page */
 .Bmi-bg-color {
-    background-color: #f8fdff;
+    background-color: #314b56;
 }
 
 /* ===== Home Page ====== */
@@ -94,11 +114,22 @@
      box-sizing: border-box;
 }
 
-/* ===== Sell Page ====== */
+/* ===== Order Page ====== */
 .text-orange{
     color: #ff7315;
 }
 
+/* =================post */
+.post-img{
+    width: 60px; height: 60px;
+}
+
+/* =================profile */
+.profile-img{
+    width: 250px; height: 250px;
+}
+
+/* ============================= another */
 .mt-10 {
     margin-top: 160px;
   }
@@ -118,3 +149,4 @@
     height: 50px;
     width: 50px;
   }
+

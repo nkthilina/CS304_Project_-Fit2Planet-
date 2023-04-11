@@ -367,7 +367,7 @@ const Home = () => {
                 </div>
                 <div className="col-10">
                   <h4>Certified Trainers</h4>
-                  <p>here i am for iu idbbc tvweeic assybc</p>
+                  <p>Expert fitness guidance from certified trainers.</p>
                 </div>
               </div>
               <div className="row py-4">
@@ -376,7 +376,7 @@ const Home = () => {
                 </div>
                 <div className="col-10">
                   <h4>Free Consultatnt</h4>
-                  <p>here i am for iu idbbc tvweeic assybc</p>
+                  <p>Expert advice at no cost for fitness goals.</p>
                 </div>
               </div>
               <div className="row py-4">
@@ -385,7 +385,7 @@ const Home = () => {
                 </div>
                 <div className="col-10">
                   <h4>Flexible Time</h4>
-                  <p>here i am for iu idbbc tvweeic assybc</p>
+                  <p>Customizable workouts for busy lifestyles.</p>
                 </div>
               </div>
             </div>

@@ -1,7 +1,6 @@
 package com.fit2planet.demo.Controller;
 
 import com.fit2planet.demo.DTO.UserDTO;
-import com.fit2planet.demo.Exception.ResourceNotFoundException;
 import com.fit2planet.demo.Model.User;
 import com.fit2planet.demo.Service.UserService;
 import org.jetbrains.annotations.NotNull;
@@ -15,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin("*")
 @RequestMapping(value = "/api/v1/user")
 public class UserController {
 

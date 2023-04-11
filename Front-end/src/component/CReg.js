@@ -1,6 +1,6 @@
-import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 const CReg = () => {
@@ -32,7 +32,7 @@ const CReg = () => {
           yearOfExperience: yearOfExperience,
           certificates: certificates,
         });
-        alert("User registered successfully.");
+        alert("Coach registered successfully.");
         setFirstName("");
         setLastName("");
         setAge("");
@@ -44,10 +44,10 @@ const CReg = () => {
         setYearOfExperience("");
         setCertificates("");
       } catch (err) {
-        alert("User registration failed.");
+        alert("Coach registration failed.");
       }
     } else {
-      window.alert("ghadahd");
+      window.alert("done");
     }
   }
   console.log(firstName);

@@ -1,5 +1,6 @@
 import React from "react";
-import "./Footer.css";
+// import "./Footer.css";
+// y
 import {
   FaLocationArrow,
   FaEnvelope,
@@ -12,8 +13,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="py-5 text-light bg-dark">
-      <div className="container py-4">
+    <footer className=" text-light bg-dark">
+      <div className="container py-3">
         <div className="row">
           <div className="col-md-4">
             <h2 className="py-4"> Fit2Planet </h2>
@@ -47,7 +48,7 @@ const Footer = () => {
               <FaLinkedin className="icon" />
             </div>
           </div>
-          <div className="col-md-4 mt-5 ml-5">
+          <div className="col-md-4 mt-5">
             <h4 className="mb-4"> USEFUL LINKS </h4>
             <div className="row">
               <div className="col-6">
@@ -81,7 +82,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <div className="text-center pb-3 mt-5">© 2021 Copyright:</div>
+          <div className="text-center pb-1 mt-5">© 2021 Copyright:</div>
         </div>
       </div>
       </div>

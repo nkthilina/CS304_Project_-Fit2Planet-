@@ -79,7 +79,7 @@ const BmiCal = () => {
             <NavBar></NavBar>
             <section className="Bmi-bg-color mt-5 " >
 
-                <div className="container py-5 h-100 mt-10">
+                <div className="container py-5 h-100 ">
 
                     <div className="card rounded-5">
                         <div className="card-body ">
@@ -163,7 +163,7 @@ const BmiCal = () => {
                                                 25 - 30
                                             </div>
                                             <div class="col-3 text-danger">
-                                                Over 35
+                                                Over 30
                                             </div>
                                         </div>
                                         <div class="row text-center text-light">
