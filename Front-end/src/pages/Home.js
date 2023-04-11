@@ -127,28 +127,27 @@ const Home = () => {
               />
             </div>
             <div className="col-md-6 ">
-              <h3>Knowledge, Skill & Hard work</h3>
+              <h3>WHY CHOOSE US?</h3>
+              <h6>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                quasi alias voluptas accusantium laudantium laboriosam ipsam
-                dicta vel explicabo maiores odio tenetur in, earum perferendis
-                quia rerum recusandae doloribus quaerat nisi veniam hic. Dolor
-                dignissimos quo libero tempore qui dolorum quis non, odio, sunt
-                ea totam cumque laboriosam architecto quos!
+                EXPERT COACHES
               </p>
+              <p>TRAIN SMARTER AND FASTER THAN BEFORE</p>
+              <p>1 FREE PROGRAM FOR NEW MEMBER</p>
+              <p>RELIABLE PARTNERS</p>
+              </h6>
             </div>
           </div>
 
           <div className="row justify-content-between align-items-center mb-5 bg">
             <div className="col-md-6 ">
               <h3>Knowledge, Skill & Hard work</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                quasi alias voluptas accusantium laudantium laboriosam ipsam
-                dicta vel explicabo maiores odio tenetur in, earum perferendis
-                quia rerum recusandae doloribus quaerat nisi veniam hic. Dolor
-                dignissimos quo libero tempore qui dolorum quis non, odio, sunt
-                ea totam cumque laboriosam architecto quos!
+              <p><h6>
+              At our fitness website, we offer a comprehensive suite of services designed to 
+              help you improve your fitness, such as online coaching, workout tracking, and healthy 
+              meal planning, all in one convenient location
+              </h6>
+             
               </p>
             </div>
             <div className="col-md-6 text-center mt-5 mt-md-0">
@@ -218,7 +217,7 @@ const Home = () => {
             ></button>
           </div>
           <div className="carousel-inner">
-            <div className="carousel-item active">
+            <div className="carousel-item active" data-bs-interval="3000">
               <img src={Carosal1} className="d-block w-100" alt="..." />
               <div className="carousel-caption d-none d-md-block">
                 <h5>Knowledge, Skill, & Hard Work</h5>
@@ -230,7 +229,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item" data-bs-interval="3000">
               <img src={Carosal2} className="d-block w-100" alt="..." />
               <div className="carousel-caption d-none d-md-block">
                 <h5>Knowledge</h5>
@@ -244,7 +243,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item" data-bs-interval="3000">
               <img src={Carosal3} className="d-block w-100" alt="..." />
               <div className="carousel-caption d-none d-md-block">
                 <h5>Skill</h5>
@@ -257,7 +256,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item" data-bs-interval="3000">
               <img src={Carosal4} className="d-block w-100" alt="..." />
               <div className="carousel-caption d-none d-md-block">
                 <h5>Hard Work</h5>

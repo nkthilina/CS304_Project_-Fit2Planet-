@@ -11,18 +11,19 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @Builder
+@NoArgsConstructor
 public class LoginDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "loginId")
-    private int loginId;
+    public int loginId;
 
     @Column(name = "email")
-    private String email;
+    public String email;
 
     @Column(name = "password")
-    private String password;
+    public String password;
 
 //    @OneToOne(cascade = CascadeType.ALL)
 //    @PrimaryKeyJoinColumn
@@ -30,10 +31,10 @@ public class LoginDetails {
 
     @OneToOne
     @JoinColumn(name = "userId", referencedColumnName = "userId")
-    private User user;
+    public User user;
 
     @OneToOne
     @JoinColumn(name = "coachId", referencedColumnName = "coachId")
-    private Coach coach;
+    public Coach coach;
 
 }
