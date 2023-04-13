@@ -7,19 +7,36 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class LoginDetailsDTO {
 
-    private int loginId;
+    private Integer loginId;
     private String email;
     private String password;
-    private int userId;
-    private int coachId;
+    private Integer type;
 
-    public LoginDetailsDTO (String email, String password) {
+
+    public LoginDetailsDTO() {
+
+    }
+
+    public LoginDetailsDTO(Integer loginId, String email, String password, Integer type) {
+        this.loginId = loginId;
         this.email = email;
         this.password = password;
+        this.type = type;
     }
+
+
+
+
+//    private int userId;
+//    private int coachId;
+//
+//    public LoginDetailsDTO (String email, String password) {
+//        this.email = email;
+//        this.password = password;
+//    }
 
 }

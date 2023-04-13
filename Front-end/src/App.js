@@ -12,6 +12,8 @@ import UserDetails from "./pages/UserDetails";
 import UpdateForm from "./pages/UpdateForm";
 import UProfile from "./pages/UProfile";
 import CProfile from "./pages/CProfile";
+import Post from "./pages/Posts/Post.js";
+
 
 function App() {
   return (
@@ -31,8 +33,9 @@ function App() {
           <Route path="/UpdateForm" element={<UpdateForm />} />
           <Route path="/UProfile" element={<UProfile />} />
           <Route path="/CProfile" element={<CProfile />} />
-          {/* <Route path="/add-user" element={<UpdateForm />} /> */}
           <Route path="/edit-user" element={<UpdateForm />} />
+          <Route path="/Post" element={<Post />} />
+          {/* <Route path="/add-user" element={<UpdateForm />} /> */}
           {/* <Route path="/add-user" element={<Regester />} /> */}
         </Routes>
       </Router>

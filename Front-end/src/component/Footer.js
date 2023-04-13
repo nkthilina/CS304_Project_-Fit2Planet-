@@ -53,8 +53,8 @@ const Footer = () => {
             <div className="row">
               <div className="col-6">
                 <p> Home </p>
-                <p> About </p>
                 <p> Blog </p>
+                <p> About </p>
                 <p> Contact </p>
               </div>
               {/* <div className="col-6">
@@ -82,7 +82,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <div className="text-center pb-1 mt-5">© 2021 Copyright:</div>
+          <div className="text-center pb-1 mt-5">© 2023 Copyright:</div>
         </div>
       </div>
       </div>

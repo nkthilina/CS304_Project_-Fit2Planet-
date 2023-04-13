@@ -5,6 +5,9 @@ import Footer from "../component/Footer";
 
 import UserImg from "../assets/Img/HomeImg/user.jpg";
 import PostImg from "../assets/Img/HomeImg/Single man.jpg";
+import HelpClient from "../assets/Img/HomeImg/help_client.jpg";
+import Supportive from "../assets/Img/HomeImg/supportive.jpg";
+import Larzor from "../assets/Img/HomeImg/Larzor-Angelov.png";
 
 import Carosal1 from "../assets/Img/HomeImg/Carosal/Carosal 1.jpg";
 import Carosal2 from "../assets/Img/HomeImg/Carosal/Carosal 2.jpg";
@@ -121,7 +124,7 @@ const Home = () => {
           <div className="row justify-content-between align-items-center mb-5">
             <div className="col-md-6 text-center mb-5 mb-md-0">
               <img
-                src={PostImg}
+                src={Larzor}
                 alt="img-fluid"
                 className="img-fluid rounded"
               />
@@ -141,18 +144,17 @@ const Home = () => {
 
           <div className="row justify-content-between align-items-center mb-5 bg">
             <div className="col-md-6 ">
-              <h3>Knowledge, Skill & Hard work</h3>
+              <h3>COMMUNITY COUNTS</h3>
               <p><h6>
-              At our fitness website, we offer a comprehensive suite of services designed to 
-              help you improve your fitness, such as online coaching, workout tracking, and healthy 
-              meal planning, all in one convenient location
+              We know a positive attitude is everything. We work together to deliver results in a friendly, 
+              fun and supportive environment where everyone knows your name.
               </h6>
              
               </p>
             </div>
             <div className="col-md-6 text-center mt-5 mt-md-0">
               <img
-                src={PostImg}
+                src={Supportive}
                 alt="img-fluid"
                 className="img-fluid rounded"
               />
@@ -162,20 +164,18 @@ const Home = () => {
           <div className="row justify-content-between align-items-center mb-5">
             <div className="col-md-6 text-center mb-5 mb-md-0">
               <img
-                src={PostImg}
+                src={HelpClient}
                 alt="img-fluid"
                 className="img-fluid rounded"
               />
             </div>
             <div className="col-md-6 ">
-              <h3>Knowledge, Skill & Hard work</h3>
+              <h3>Energy is for Everyone</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                quasi alias voluptas accusantium laudantium laboriosam ipsam
-                dicta vel explicabo maiores odio tenetur in, earum perferendis
-                quia rerum recusandae doloribus quaerat nisi veniam hic. Dolor
-                dignissimos quo libero tempore qui dolorum quis non, odio, sunt
-                ea totam cumque laboriosam architecto quos!
+                Help Clients Achieve Goals
+              </p>
+              <p>
+              Believe in the power of a motivating group fitness community.
               </p>
             </div>
           </div>

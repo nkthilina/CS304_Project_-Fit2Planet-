@@ -98,9 +98,9 @@ public class User {
 //    @JoinColumn(name = "package" , nullable = false)
 //    private Package package;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private LoginDetails loginDetails;
+//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
+//    private LoginDetails loginDetails;
 
 //    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
 //    @JoinColumn(name = "loginId",referencedColumnName = "loginId")

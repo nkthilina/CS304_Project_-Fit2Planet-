@@ -1,15 +1,15 @@
 import React from 'react'
-import fitness from '../assets/fitness.jpg';
-const BlogCard = () => {
+import PersonalTrainer from '../../assets/Img/Blog/Personal_trainer_Lazor.jpg';
+const BlogCardPersonalTrainer = () => {
     return (
         <div className="col-xl-3 col-lg-4 col-md-6">
             <div className="card rounded-6 shadow-sm">
-                <img src={fitness} className="card-img-top rounded-t-6" alt="..." />
+                <img src={PersonalTrainer} className="card-img-top rounded-t-6" alt="..." />
                 <div className="card-body py-0">
                     <div className="border-bottom py-2 mb-2 ">
                         <div className="row align-items-center">
                             <div className="col-9 d-flex">
-                                <img src="" className=" proimg" alt="..." />
+                                <img src="img/img 1.jpg" className=" proimg " alt="..." />
                                 <div className="mx-3">
                                     <h6 className="m-0 p-0">FitPlanet <i className="bi bi-award-fill"></i></h6>
                                     <p className=" m-0 p-0 text-muted small"> <small> asasdasd </small> </p>
@@ -41,4 +41,4 @@ const BlogCard = () => {
     )
 }
 
-export default BlogCard
+export default BlogCardPersonalTrainer

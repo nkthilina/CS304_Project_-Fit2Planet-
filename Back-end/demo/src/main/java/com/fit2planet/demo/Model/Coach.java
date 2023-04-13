@@ -54,9 +54,9 @@ public class Coach {
     @Column(name = "certificates")
     private String certificates;
 
-    @OneToOne(mappedBy = "coach", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private LoginDetails loginDetails;
+//    @OneToOne(mappedBy = "coach", cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
+//    private LoginDetails loginDetails;
 
     @OneToMany(mappedBy = "coach")
     private List<Product> product = new ArrayList<>();

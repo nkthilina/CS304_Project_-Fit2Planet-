@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 // import user from "../assets/Img/HomeImg/user.jpg";
 import axios from "axios";
 import "./Style.css";
-import UserCard from "./UserCard";
+import UserCard from "../component/UserCard";
 import UserServices from "../Services/UserServices/UserServices";
 
 const UProfile = () => {
