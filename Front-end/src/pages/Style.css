@@ -73,6 +73,11 @@
 
 .HomeWelcome {
     margin-top: -140px;
+    
+}
+.HomeWelcome-color {
+   
+    background-color: #d1cbcb;
 }
 
 .HomeTestimonialsImg {
@@ -114,6 +119,19 @@
      box-sizing: border-box;
 }
 
+.services {
+    background-color: #d1cbcb;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .details {
+    background-color: #d8d8d8;
+    /* background-color: #d1cbcb; */
+    /* padding-top: 80px;
+    padding-bottom: 80px; */
+  }
+
 /* ===== Order Page ====== */
 .text-orange{
     color: #ff7315;
@@ -134,11 +152,7 @@
     margin-top: 160px;
   }
 
-.services {
-    background-color: #d1cbcb;
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
+
   .col-md-2 {
     padding: 20px;
   }

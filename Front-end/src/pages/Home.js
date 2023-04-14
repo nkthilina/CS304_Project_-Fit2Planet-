@@ -13,13 +13,25 @@ import Carosal1 from "../assets/Img/HomeImg/Carosal/Carosal 1.jpg";
 import Carosal2 from "../assets/Img/HomeImg/Carosal/Carosal 2.jpg";
 import Carosal3 from "../assets/Img/HomeImg/Carosal/Carosal 3.jpg";
 import Carosal4 from "../assets/Img/HomeImg/Carosal/Carosal 4.jpg";
-import { FaUserAlt, FaDumbbell, FaClock, FaChild,FaSwimmer,FaTableTennis,FaGolfBall,FaShoppingCart,FaTrophy,FaHeartbeat,FaCalendarCheck } from "react-icons/fa";
+import {
+  FaUserAlt,
+  FaDumbbell,
+  FaClock,
+  FaChild,
+  FaSwimmer,
+  FaTableTennis,
+  FaGolfBall,
+  FaShoppingCart,
+  FaTrophy,
+  FaHeartbeat,
+  FaCalendarCheck,
+} from "react-icons/fa";
 import "./Style.css";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
+    <div className="details">
       <NavBar />
       <section className="home-bg-img mt-5">
         <div className="container mt-10">
@@ -35,12 +47,14 @@ const Home = () => {
                 className="btn btn-md btn-light px-4 m-3"
                 // disabled
               >
-                <a href="/Regester" className="nav-link px-1 text-secondary">GET A MEMBERSHIP</a>
+                <a href="/Regester" className="nav-link px-1 text-secondary">
+                  GET A MEMBERSHIP
+                </a>
               </button>
               <button
                 type="submit"
                 className="btn btn-secondary py-2 px-4"
-                disabled 
+                disabled
               >
                 be excited
               </button>
@@ -50,9 +64,13 @@ const Home = () => {
       </section>
 
       <section className="container HomeWelcome">
-        <div className="card">
+        <div className="card ">
           <div className="card-body p-5 text-center shadow-lg">
             <h1 className="card-title p-3"> Cardio. Strength. Mobility </h1>
+            {/* <h1 className="card-title p-3"> Coach. Care. Connect. </h1> */}
+            {/* <h5 className="card-text p-3">
+            Virtual Workouts • Health Coaching Advice • Community
+            </h5> */}
             <h5 className="card-text p-3">
               This is what we do best. Every workout that you experience with
               Fit2Planet made from scratch under our fitness supervision.
@@ -61,56 +79,63 @@ const Home = () => {
               type="submit"
               className="btn btn-primary py-2 px-5 rounded-pill"
             >
-              <a href="/Regester" className="nav-link px-1 text-white">Join</a>
+              <a href="/Regester" className="nav-link px-1 text-white">
+                Join
+              </a>
             </button>
           </div>
         </div>
       </section>
 
-      <section className="py-3">
+      <section className="py-3 ">
         <div className="container p-5">
           <div className="row  justify-content-center align-items-center text-center g-0">
             <div className="col-md-3">
               <div className="card p-3 rounded-3 bg-light">
                 <div className="card-body">
-                  <h5 className="card-title"> Free Pakage</h5>
+                  <h5 className="card-title"> FREE FITNESS CONSULTATION</h5>
                   <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Through a short survey, and a movement assessment, the
+                    Fit2Planet system will prescribe the perfect program to get
+                    you started and on track to meet your fitness goals.
                   </p>
-                  <h5 className="p-3 text-primary">20.50$</h5>
+                  <h5 className="p-3 text-primary"></h5>
                   <a href="#" className="btn btn-primary rounded-pill">
-                    Go somewhere
+                    Learn More
                   </a>
                 </div>
               </div>
             </div>
+
             <div className="col-md-3 shadow-lg">
               <div className="card px-4 py-5  rounded-3 bg-light">
                 <div className="card-body">
-                  <h5 className="card-title"> Premium Pakage</h5>
+                  <h5 className="card-title"> GROUP WORKOUTS</h5>
                   <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Full-body workouts are designed to build strength and
+                    endurance, using the energy of a small group or team of
+                    people around you and the expertise of the coach to maximize
+                    your results.
                   </p>
-                  <h5 className="p-3 text-primary">20.50$</h5>
+                  <h5 className="p-3 text-primary">15$</h5>
                   <a href="#" className="btn btn-primary rounded-pill">
-                    Go somewhere
+                    Learn More
                   </a>
                 </div>
               </div>
             </div>
+
             <div className="col-md-3">
               <div className="card p-3 rounded-3 bg-light">
                 <div className="card-body">
-                  <h5 className="card-title"> Exclusive Pakage </h5>
+                  <h5 className="card-title"> ONE-ON-ONE TRAINING </h5>
                   <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    One-on-one personalized workouts with your coach are
+                    designed to make you stronger from the inside out.
                   </p>
-                  <h5 className="p-3 text-primary">20.50$</h5>
+                  <h5 className="p-3 text-primary">30$</h5>
                   <a href="#" className="btn btn-primary rounded-pill">
-                    Go somewhere
+                    Learn More
                   </a>
                 </div>
               </div>
@@ -123,34 +148,27 @@ const Home = () => {
         <div className="container">
           <div className="row justify-content-between align-items-center mb-5">
             <div className="col-md-6 text-center mb-5 mb-md-0">
-              <img
-                src={Larzor}
-                alt="img-fluid"
-                className="img-fluid rounded"
-              />
+              <img src={Larzor} alt="img-fluid" className="img-fluid rounded" />
             </div>
-            <div className="col-md-6 ">
-              <h3>WHY CHOOSE US?</h3>
-              <h6>
-              <p>
-                EXPERT COACHES
-              </p>
-              <p>TRAIN SMARTER AND FASTER THAN BEFORE</p>
-              <p>1 FREE PROGRAM FOR NEW MEMBER</p>
-              <p>RELIABLE PARTNERS</p>
-              </h6>
+            <div className="col-md-6 ps-md-4">
+              <h2 className="fw-bold py-2">WHY CHOOSE US?</h2>
+              <h5 className=" text-muted">EXPERT COACHES </h5>
+              <h5 className=" text-muted">
+                TRAIN SMARTER AND FASTER THAN BEFORE
+              </h5>
+              <h5 className=" text-muted"> 1 FREE PROGRAM FOR NEW MEMBER</h5>
+              <h5 className=" text-muted">RELIABLE PARTNERS</h5>
             </div>
           </div>
 
           <div className="row justify-content-between align-items-center mb-5 bg">
             <div className="col-md-6 ">
-              <h3>COMMUNITY COUNTS</h3>
-              <p><h6>
-              We know a positive attitude is everything. We work together to deliver results in a friendly, 
-              fun and supportive environment where everyone knows your name.
-              </h6>
-             
-              </p>
+              <h2 className="fw-bold py-2">COMMUNITY COUNTS</h2>
+              <h5 className=" text-muted">
+                We know a positive attitude is everything. We work together to
+                deliver results in a friendly, fun and supportive environment
+                where everyone knows your name.
+              </h5>
             </div>
             <div className="col-md-6 text-center mt-5 mt-md-0">
               <img
@@ -169,14 +187,12 @@ const Home = () => {
                 className="img-fluid rounded"
               />
             </div>
-            <div className="col-md-6 ">
-              <h3>Energy is for Everyone</h3>
-              <p>
-                Help Clients Achieve Goals
-              </p>
-              <p>
-              Believe in the power of a motivating group fitness community.
-              </p>
+            <div className="col-md-6 ps-md-4">
+              <h2 className="fw-bold py-2 ">Energy is for Everyone</h2>
+              <h5 className=" text-muted">Help Clients Achieve Goals</h5>
+              <h5 className=" text-muted">
+                Believe in the power of a motivating group fitness community.
+              </h5>
             </div>
           </div>
         </div>
@@ -300,50 +316,47 @@ const Home = () => {
       <section className="py-5 services">
         <div className="container">
           <div className="mb-4 text-center">
-            <h1> Services </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laboriosam, dignissimos{" "}
-            </p>
+            {/* <h1> Services </h1> */}
+            <h1> Coach. Care. Connect. </h1>
+            <p>Virtual Workouts • Health Coaching Advice • Community</p>
           </div>
 
           <div className="row text-center p-md-3">
-          <div className="col-md-2" />
+            <div className="col-md-2" />
             <div className="col-md-2">
-            <FaUserAlt className="fa" />
+              <FaUserAlt className="fa" />
               <p>Personal trainers</p>
             </div>
             <div className="col-md-2">
-            <FaDumbbell className="fa" />
+              <FaDumbbell className="fa" />
               <p>Gyms</p>
             </div>
             <div className="col-md-2">
-            <FaClock className="fa" />
+              <FaClock className="fa" />
               <p>Fitness classes</p>
             </div>
             <div className="col-md-2">
-            <FaChild className="fa" />
+              <FaChild className="fa" />
               <p>Yoga classes</p>
             </div>
-            
           </div>
 
           <div className="row text-center p-md-3">
-          <div className="col-md-2" />
+            <div className="col-md-2" />
             <div className="col-md-2">
-            <FaSwimmer className="fa" />
+              <FaSwimmer className="fa" />
               <p>Swimming</p>
             </div>
             <div className="col-md-2">
-            <FaTableTennis className="fa" />
+              <FaTableTennis className="fa" />
               <p>Badminton</p>
             </div>
             <div className="col-md-2">
-            <FaGolfBall className="fa" />
+              <FaGolfBall className="fa" />
               <p>Golf classes</p>
             </div>
             <div className="col-md-2">
-            <FaShoppingCart className="fa" />
+              <FaShoppingCart className="fa" />
               <p className="text-align-center">
                 {" "}
                 Purchase <br />
@@ -362,7 +375,7 @@ const Home = () => {
             <div className="col-md-6 ">
               <div className="row py-4">
                 <div className="col-2">
-                <FaTrophy className="fa" />
+                  <FaTrophy className="fa" />
                 </div>
                 <div className="col-10">
                   <h4>Certified Trainers</h4>
@@ -371,7 +384,7 @@ const Home = () => {
               </div>
               <div className="row py-4">
                 <div className="col-2">
-                <FaHeartbeat className="fa" />
+                  <FaHeartbeat className="fa" />
                 </div>
                 <div className="col-10">
                   <h4>Free Consultatnt</h4>
@@ -380,7 +393,7 @@ const Home = () => {
               </div>
               <div className="row py-4">
                 <div className="col-2">
-                <FaCalendarCheck className="fa" />
+                  <FaCalendarCheck className="fa" />
                 </div>
                 <div className="col-10">
                   <h4>Flexible Time</h4>
@@ -392,37 +405,54 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="testimonials" className="p-5">
+      <section id="testimonials" className="p-5 bg-light">
         <div className="container">
           <div className=" text-center py-3">
-            <h1> Meet Our Users </h1>
-            <p className="">
+            {/* <h1> Meet Our Users </h1> */}
+            <h1> WHAT CLIENTS SAY </h1>
+            <p className="">YOUR OPINIONS MATTER!</p>
+            {/* <p className="">
             Few feedbacks of our fewest out of many satisfied customers.
-            </p>
+            </p> */}
           </div>
 
           <div className="row g-5">
             <div className="col-md-4">
               <p className="review">
-                Good site to know everything about fitness <br />
+                "I began training at Sault Fitness in September 2016, knowing
+                that I needed to make some lifestyle changes. At age 72, I am
+                amazed at how well I am feeling today…."
+                <br />
                 <i className="bi bi-twitter"></i>
-                <span className="testimonialsSpan">@username</span>
+                <span className="testimonialsSpan">@Kin_Howland</span>
               </p>
               <img className="HomeTestimonialsImg" src={UserImg} />
             </div>
             <div className="col-md-4">
               <p className="review">
+                "Since joining Fit2Planet Fitness in August 2016 and working
+                with Mike, I have finally achieved long term success. I have
+                lost 33 pounds and 5 inches off of my waist and, as a result, I
+                am no longer taking blood pressure and cholesterol medicine."{" "}
+                <br />
+                <i className="bi bi-twitter"></i>
+                <span className="testimonialsSpan">@Glenn_Sherman</span>
+              </p>
+              {/* <p className="review">
                 Good site to know everything about fitness <br />
                 <i className="bi bi-twitter"></i>
                 <span className="testimonialsSpan">@username</span>
-              </p>
+              </p> */}
               <img className="HomeTestimonialsImg" src={UserImg} />
             </div>
             <div className="col-md-4">
               <p className="review">
-                Good site to know everything about fitness <br />
+                "If you have the opportunity to train with Jared, you will see
+                results that you didn't think were possible. Training with Jared
+                is an amazing experience."
+                <br />
                 <i className="bi bi-twitter"></i>
-                <span className="testimonialsSpan">@username</span>
+                <span className="testimonialsSpan">@Mark_Bastian</span>
               </p>
               <img className="HomeTestimonialsImg" src={UserImg} />
             </div>
@@ -430,16 +460,18 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="container p-5 text-center">
-        <h1 className="pb-5">Company Introduction</h1>
-        <p>
-          Fit2Planet is an outstanding online sports scheduling software which
-          gives solutions for small and medium-sized businesses of all types. We
-          provide high-quality booking services for individuals as well as
-          companies all over the world and help them to grow and prosper. Our
-          reputable and secure appointment system is designed to make bookings
-          easy and comfortable for both our users and their clients!
-        </p>
+      <section className=" p-5 text-center bg-light">
+        <div className="container px-5">
+          <h1 className="pb-5">Company Introduction</h1>
+          <p>
+            Fit2Planet is an outstanding online sports scheduling software which
+            gives solutions for small and medium-sized businesses of all types.
+            We provide high-quality booking services for individuals as well as
+            companies all over the world and help them to grow and prosper. Our
+            reputable and secure appointment system is designed to make bookings
+            easy and comfortable for both our users and their clients!
+          </p>
+        </div>
       </section>
       <Footer />
     </div>

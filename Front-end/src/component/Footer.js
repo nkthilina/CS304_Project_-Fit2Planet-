@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="container py-3">
         <div className="row">
           <div className="col-md-4">
-            <h2 className="py-4"> Fit2Planet </h2>
+            <h1 className="py-4"> Fit2Planet </h1>
             <p className="">
               Fit2Planet is an outstanding online sports scheduling software
               which gives solutions for small and medium-sized businesses of all
@@ -30,12 +30,14 @@ const Footer = () => {
           </div>
           <div className="col-md-8">
             <h1 className="py-4">
+              WHY Fit2Planet
+            </h1>
+            {/* <h1 className="py-4">
               {" "}
               Special Offer All Branded Sandals are Flat 50% Discount{" "}
-            </h1>
+            </h1> */}
             <p className="">
-              Lorem upiditate delectus rerum vel ullam quas, ea explicabo vero,
-              ad eaque a, magni nam amet! Distinctio a ea nulla!
+            At Fit2Planet Fitness, we truly care about each and every client’s success. We’ll work with you to help you achieve your health and fitness goals. Personal training, nutritional plans, support, home workouts…we’ll stick with you through it all. Let’s do this…together.
             </p>
           </div>
         </div>
