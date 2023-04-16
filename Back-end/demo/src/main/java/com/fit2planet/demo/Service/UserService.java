@@ -1,6 +1,9 @@
 package com.fit2planet.demo.Service;
 
+import com.fit2planet.demo.DTO.LoginDetailsDTO;
+import com.fit2planet.demo.DTO.SignupUserDTO;
 import com.fit2planet.demo.DTO.UserDTO;
+import com.fit2planet.demo.Enums.TYPE;
 import com.fit2planet.demo.Model.User;
 import com.fit2planet.demo.Repository.UserRepository;
 import jakarta.transaction.Transactional;
@@ -9,9 +12,7 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -20,13 +21,35 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    private final ModelMapper modelMapper = new ModelMapper();
+    @Autowired
+    private ModelMapper modelMapper;
+    @Autowired
+    private LoginDetailsService loginDetailsService;
 
 
+    public UserDTO addUser(SignupUserDTO data){
+        try{
+            User newUser=modelMapper.map(data,User.class);
+            User saveduser=userRepository.save(newUser);
+            if(saveduser!=null){
+                LoginDetailsDTO save=new LoginDetailsDTO();
+                save.setEmail(data.getEmail());
+                save.setPassword(data.getPassword());
+                save.setType(TYPE.USER);
+                save.setId(saveduser.getUserId());
 
-    public void addUser(UserDTO userDTO){
-        User u = modelMapper.map(userDTO,User.class);
-        userRepository.save(u);
+                LoginDetailsDTO savedDetails=loginDetailsService.addLoginDetails(save);
+                if(savedDetails!=null) {
+                    return modelMapper.map(saveduser, new TypeToken<UserDTO>(){}.getType());
+                }
+                return null;
+            }
+            return null;
+        }
+        catch (Exception e){
+            System.out.println(e.toString());
+            return null;
+        }
     }
 
     public List<UserDTO> getAllUsers(){
@@ -47,8 +70,6 @@ public class UserService {
                              String lastName,
                              Integer age,
                              String gender,
-                             String email,
-                             String password,
                              Integer mobileNumber,
                              String location) {
         User user = userRepository.getReferenceById(userId);
@@ -56,8 +77,6 @@ public class UserService {
         user.setLastName(lastName);
         user.setAge(age);
         user.setGender(gender);
-        user.setEmail(email);
-        user.setPassword(password);
         user.setMobileNumber(mobileNumber);
         user.setLocation(location);
     }

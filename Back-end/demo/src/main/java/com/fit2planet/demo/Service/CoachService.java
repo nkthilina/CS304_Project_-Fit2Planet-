@@ -1,11 +1,11 @@
 package com.fit2planet.demo.Service;
 
 import com.fit2planet.demo.DTO.CoachDTO;
-import com.fit2planet.demo.DTO.UserDTO;
+import com.fit2planet.demo.DTO.LoginDetailsDTO;
+import com.fit2planet.demo.DTO.SignUpCoachDTO;
+import com.fit2planet.demo.Enums.TYPE;
 import com.fit2planet.demo.Model.Coach;
-import com.fit2planet.demo.Model.User;
 import com.fit2planet.demo.Repository.CoachRepository;
-import com.fit2planet.demo.Repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -20,19 +20,51 @@ public class CoachService {
 
     @Autowired
     private CoachRepository coachRepository;
+    @Autowired
+    private LoginDetailsService loginDetailsService;
+    @Autowired
+    private ModelMapper modelMapper;
 
-    private final ModelMapper modelMapper = new ModelMapper();
 
 
+    public CoachDTO addCoach(SignUpCoachDTO data){
+        try{
+            Coach newUser=modelMapper.map(data,Coach.class);
+            Coach saveduser=coachRepository.save(newUser);
+            if(saveduser!=null){
+                LoginDetailsDTO save=new LoginDetailsDTO();
+                save.setEmail(data.getEmail());
+                save.setPassword(data.getPassword());
+                save.setType(TYPE.COACH);
+                save.setId(saveduser.getCoachId());
 
-    public void addCoach(CoachDTO coachDTO){
-        Coach c = modelMapper.map(coachDTO,Coach.class);
-        coachRepository.save(c);
+                LoginDetailsDTO savedDetails=loginDetailsService.addLoginDetails(save);
+                if(savedDetails!=null) {
+                    return modelMapper.map(saveduser, new TypeToken<CoachDTO>(){}.getType());
+                }
+                return null;
+            }
+            return null;
+        }
+        catch (Exception e){
+            System.out.println(e.toString());
+            return null;
+        }
     }
 
     public List<CoachDTO> getAllCoaches(){
-        List<Coach> coachList = coachRepository.findAll();
-        return modelMapper.map(coachList,new TypeToken<List<CoachDTO>>(){}.getType());
+        try{
+            List<Coach> coachList = coachRepository.findAll();
+            if(coachList==null){
+                return null;
+            }
+            return modelMapper.map(coachList,new TypeToken<List<CoachDTO>>(){}.getType());
+        }
+        catch (Exception e){
+            System.out.println(e.toString());
+            return null;
+        }
+
     }
 
     public Coach getCoachByCoachId(Integer coachId) {
@@ -64,8 +96,8 @@ public class CoachService {
         coach.setLastName(lastName);
         coach.setAge(age);
         coach.setGender(gender);
-        coach.setEmail(email);
-        coach.setPassword(password);
+//        coach.setEmail(email);
+//        coach.setPassword(password);
         coach.setMobileNumber(mobileNumber);
         coach.setLocation(location);
         coach.setYearOfExperience(yearOfExperience);

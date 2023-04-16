@@ -9,9 +9,7 @@ const UserDetails = () => {
 
   return (
     <div>
-        <NavBar />
         <ListUserComponent />
-        <Footer />
     </div>
   )
 }

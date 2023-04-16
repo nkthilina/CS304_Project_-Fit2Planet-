@@ -1,6 +1,7 @@
 package com.fit2planet.demo.Model;
 
 
+import com.fit2planet.demo.Enums.TYPE;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,9 +10,8 @@ import lombok.*;
 @Table(name = "loginDetails")
 @Getter
 @Setter
-//@Builder
-//@AllArgsConstructor
-//@NoArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public class LoginDetails {
 
     @Id
@@ -25,34 +25,9 @@ public class LoginDetails {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false)
-    private Integer type;
+    private TYPE type;
 
-    public LoginDetails() {
-
-    }
-
-    public LoginDetails( String email, String password, Integer type) {
-//        this.loginId = loginId;
-        this.email = email;
-        this.password = password;
-        this.type = type;
-    }
-
-//    public LoginDetails(String email, String password, Integer type) {
-//    }
-
-
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @PrimaryKeyJoinColumn
-//    private User user;
-
-//    @OneToOne
-//    @JoinColumn(name = "userId", referencedColumnName = "userId")
-//    public User user;
-//
-//    @OneToOne
-//    @JoinColumn(name = "coachId", referencedColumnName = "coachId")
-//    public Coach coach;
-
+    private int id;
 }

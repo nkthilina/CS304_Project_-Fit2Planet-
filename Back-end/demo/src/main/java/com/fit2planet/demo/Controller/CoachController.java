@@ -1,15 +1,18 @@
 package com.fit2planet.demo.Controller;
 
 import com.fit2planet.demo.DTO.CoachDTO;
-import com.fit2planet.demo.DTO.UserDTO;
+import com.fit2planet.demo.DTO.SignUpCoachDTO;
 import com.fit2planet.demo.Model.Coach;
 import com.fit2planet.demo.Service.CoachService;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RestController
@@ -21,15 +24,38 @@ public class CoachController {
     private CoachService coachService;
 
     //with DTO package
-    @PostMapping("/add")
-    public String addCoach(@RequestBody CoachDTO coachDTO){
-        coachService.addCoach(coachDTO);
-        return "Coach is successfully added";
+    @PostMapping("/addcoach")
+    public ResponseEntity<?> addCoach(@RequestBody SignUpCoachDTO coachDTO){
+        Map<String, Object> map = new LinkedHashMap<>();
+        CoachDTO c=coachService.addCoach(coachDTO);
+        if (c!=null) {
+            map.put("status", 1);
+            map.put("data", c);
+            return new ResponseEntity<>(map, HttpStatus.OK);
+        } else {
+            map.clear();
+            map.put("status", 0);
+            map.put("message", "Registration failed");
+            return new ResponseEntity<>(map, HttpStatus.OK);
+        }
     }
 
+
+
     @GetMapping("/getAll")
-    public List<CoachDTO> getAllCoaches(){
-        return coachService.getAllCoaches();
+    public ResponseEntity<?> getAllCoaches(){
+        Map<String, Object> map = new LinkedHashMap<>();
+        List<CoachDTO> c=coachService.getAllCoaches();
+        if (c!=null) {
+            map.put("status", 1);
+            map.put("data", c);
+            return new ResponseEntity<>(map, HttpStatus.OK);
+        } else {
+            map.clear();
+            map.put("status", 0);
+            map.put("message", "Coach list not found");
+            return new ResponseEntity<>(map, HttpStatus.OK);
+        }
     }
 
     @GetMapping("/get/{coachId}")
@@ -48,22 +74,22 @@ public class CoachController {
         return "Coach with coachId "+coachId+" is successfully removed";
     }
 
-    @PutMapping("/update/{coachId}")
-    public String updateCoach(@PathVariable Integer coachId, @RequestBody @NotNull CoachDTO coachDTO) {
-        coachService.updateCoach(
-                coachId,
-                coachDTO.getFirstName(),
-                coachDTO.getLastName(),
-                coachDTO.getAge(),
-                coachDTO.getGender(),
-                coachDTO.getEmail(),
-                coachDTO.getPassword(),
-                coachDTO.getMobileNumber(),
-                coachDTO.getLocation(),
-                coachDTO.getYearOfExperience(),
-                coachDTO.getCertificates());
-        return "Coach with coachId "+coachId+" is successfully updated";
-    }
+//    @PutMapping("/update/{coachId}")
+//    public String updateCoach(@PathVariable Integer coachId, @RequestBody @NotNull CoachDTO coachDTO) {
+//        coachService.updateCoach(
+//                coachId,
+//                coachDTO.getFirstName(),
+//                coachDTO.getLastName(),
+//                coachDTO.getAge(),
+//                coachDTO.getGender(),
+////                coachDTO.getEmail(),
+////                coachDTO.getPassword(),
+////                coachDTO.getMobileNumber(),
+//                coachDTO.getLocation(),
+//                coachDTO.getYearOfExperience(),
+//                coachDTO.getCertificates());
+//        return "Coach with coachId "+coachId+" is successfully updated";
+//    }
 
 
 }

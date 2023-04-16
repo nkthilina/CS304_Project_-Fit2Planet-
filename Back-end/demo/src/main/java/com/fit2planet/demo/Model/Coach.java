@@ -33,15 +33,6 @@ public class Coach {
     @Column(name = "gender")
     private String gender;
 
-//    @Column(name = "userName")
-//    private String username;
-
-    @Column(name = "email", unique = true, nullable = false)
-    private String email;
-
-    @Column(name = "password", unique = true, nullable = false)
-    private String password;
-
     @Column(name = "mobileNumber")
     private int mobileNumber;
 
@@ -53,10 +44,6 @@ public class Coach {
 
     @Column(name = "certificates")
     private String certificates;
-
-//    @OneToOne(mappedBy = "coach", cascade = CascadeType.ALL)
-//    @PrimaryKeyJoinColumn
-//    private LoginDetails loginDetails;
 
     @OneToMany(mappedBy = "coach")
     private List<Product> product = new ArrayList<>();

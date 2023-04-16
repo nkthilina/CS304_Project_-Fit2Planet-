@@ -1,13 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Style.css";
 
 const Login = () => {
-  const initialValues = { email: "", password: "" };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [userType, setUserType] = useState();
+  const navigate = useNavigate();
+  // const initialValues = { email: "", password: "" };
+  const [formValues, setFormValues] = useState({ email: "", password: "" });
+  // const [userType, setUserType] = useState();
   const initialError = {
     email: "Email is required!",
     password: "Password is required",
@@ -15,41 +16,52 @@ const Login = () => {
   const [formErrors, setFormErrors] = useState(initialError);
   const [isSubmit, setIsSubmit] = useState(false);
 
-  console.log(userType);
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-    }
-  }, [formErrors]);
+  // console.log(userType);
+  // useEffect(() => {
+  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+  //   }
+  // }, [formErrors]);
 
   function handleChange(params) {
     const { name, value } = params.target;
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
+    // console.log(formValues);
   }
 
   function handleSubmit(params) {
     params.preventDefault();
+    // console.log(formValues);
     setFormErrors(validate(formValues));
-    setIsSubmit(true);
-    let data = JSON.stringify({
-      email: "dawda@gmail.com",
-      password: "dawdwadawdawd",
-    });
+
+    // if (validate(formValues) != null) {
+    //   console.log("error thiynwa");
+    // } else {
+    //   console.log("error na");
+    // }
+    // let data = JSON.stringify({
+    //   email: "dawda@gmail.com",
+    //   password: "dawdwadawdawd",
+    // });
 
     let config = {
       method: "post",
-      maxBodyLength: Infinity,
-      url: `http://localhost:8080/api/v1/login/${userType}`,
+      url: `http://localhost:8080/api/v1/loginDetails/login`,
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json; charset=utf-8",
       },
-      data: data,
+      data: formValues,
     };
 
     axios
       .request(config)
       .then((response) => {
-        console.log(JSON.stringify(response.data));
+        if (response.data.status === 1) {
+          localStorage.setItem(
+            "loggeduser",
+            JSON.stringify(response.data.data)
+          );
+          navigate("/Home");
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -81,12 +93,12 @@ const Login = () => {
           <form className="needs-validation" onClick={handleSubmit}>
             <h2 className=" mb-5 text-center ">LogIn to your account</h2>
 
-            <div className="form-floating mb-4">
+            {/* <div className="form-floating mb-4">
               <select onChange={(e) => setUserType(e.target.value)}>
                 <option value={"user"}>User</option>
                 <option value={"coach"}>Coach</option>
               </select>
-            </div>
+            </div> */}
 
             <div className="form-floating mb-4">
               <input

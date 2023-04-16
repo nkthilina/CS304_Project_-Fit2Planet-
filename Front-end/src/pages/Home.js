@@ -32,7 +32,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="details">
-      <NavBar />
+      
       <section className="home-bg-img mt-5">
         <div className="container mt-10">
           <div className="row text-light ">
@@ -65,8 +65,8 @@ const Home = () => {
 
       <section className="container HomeWelcome">
         <div className="card ">
-          <div className="card-body p-5 text-center shadow-lg">
-            <h1 className="card-title p-3"> Cardio. Strength. Mobility </h1>
+          <div className="card-body p-3 text-center shadow-lg">
+            <h1 className="card-title p-2"> Cardio. Strength. Mobility </h1>
             {/* <h1 className="card-title p-3"> Coach. Care. Connect. </h1> */}
             {/* <h5 className="card-text p-3">
             Virtual Workouts • Health Coaching Advice • Community
@@ -473,7 +473,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <Footer />
+      
     </div>
   );
 };

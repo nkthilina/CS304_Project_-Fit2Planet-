@@ -13,14 +13,27 @@ import UpdateForm from "./pages/UpdateForm";
 import UProfile from "./pages/UProfile";
 import CProfile from "./pages/CProfile";
 import Post from "./pages/Posts/Post.js";
-
+import Items from "./pages/Items";
+import { useEffect, useState } from "react";
+import Footer from "./component/Footer";
+import NavBar from "./component/NavBar";
 
 function App() {
+  const [user, setUser] = useState();
+  useEffect(() => {
+    const logged = localStorage.getItem("loggeduser");
+    if (logged) {
+      setUser(JSON.parse(logged));
+    } else {
+      setUser(null);
+    }
+  }, []);
   return (
     <div className="App">
       <Router>
+        <NavBar />
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Regester" element={<Regester />} />
           <Route path="/BlogPost" element={<BlogPost />} />
@@ -35,9 +48,11 @@ function App() {
           <Route path="/CProfile" element={<CProfile />} />
           <Route path="/edit-user" element={<UpdateForm />} />
           <Route path="/Post" element={<Post />} />
+          <Route path="/Items" element={<Items />} />
           {/* <Route path="/add-user" element={<UpdateForm />} /> */}
           {/* <Route path="/add-user" element={<Regester />} /> */}
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

@@ -1,35 +1,56 @@
 package com.fit2planet.demo.Controller;
 
-import com.fit2planet.demo.DTO.LoginDetailsDTO;
+import com.fit2planet.demo.DTO.LoginRequestDTO;
 import com.fit2planet.demo.Service.LoginDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 @RestController
-@RequestMapping("api/v1/loginDetails")
+@CrossOrigin("*")
+@RequestMapping(value = "/api/v1/loginDetails")
 public class LoginDetailsController {
 
     @Autowired
     private LoginDetailsService loginDetailsService;
 
-    @Autowired
-    public LoginDetailsController(LoginDetailsService loginDetailsService) {
-        this.loginDetailsService = loginDetailsService;
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequestDTO data){
+        Map<String, Object> map = new LinkedHashMap<>();
+        ResponseEntity<?> c=loginDetailsService.login(data);
+        if (c!=null) {
+            map.put("status", 1);
+            map.put("data", c.getBody());
+            return new ResponseEntity<>(map, HttpStatus.OK);
+        } else {
+            map.clear();
+            map.put("status", 0);
+            map.put("message", "Login failed");
+            return new ResponseEntity<>(map, HttpStatus.OK);
+        }
     }
 
-    @PostMapping
-    public ResponseEntity<LoginDetailsDTO> saveLoginDetails(@RequestBody LoginDetailsDTO loginDetailsDTO) {
-        LoginDetailsDTO savedLoginDetails = loginDetailsService.saveLoginDetails(loginDetailsDTO);
-        return new ResponseEntity<>(savedLoginDetails, HttpStatus.CREATED);
-    }
+//    @Autowired
+//    public LoginDetailsController(LoginDetailsService loginDetailsService) {
+//        this.loginDetailsService = loginDetailsService;
+//    }
 
-    @GetMapping("/{loginId}")
-    public ResponseEntity<LoginDetailsDTO> getLoginDetailsById(@PathVariable Integer loginId) {
-        LoginDetailsDTO loginDetailsDTO = loginDetailsService.getLoginDetailsById(loginId);
-        return new ResponseEntity<>(loginDetailsDTO, HttpStatus.OK);
-    }
+//    @PostMapping("/add")
+//    public ResponseEntity<LoginDetailsDTO> saveLoginDetails(@RequestBody LoginDetailsDTO loginDetailsDTO) {
+//        LoginDetailsDTO savedLoginDetails = loginDetailsService.saveLoginDetails(loginDetailsDTO);
+//        return new ResponseEntity<>(savedLoginDetails, HttpStatus.CREATED);
+//    }
+//
+//    @GetMapping("/{loginId}")
+//    public ResponseEntity<LoginDetailsDTO> getLoginDetailsById(@PathVariable Integer loginId) {
+//        LoginDetailsDTO loginDetailsDTO = loginDetailsService.getLoginDetailsById(loginId);
+//        return new ResponseEntity<>(loginDetailsDTO, HttpStatus.OK);
+//    }
 
 
 

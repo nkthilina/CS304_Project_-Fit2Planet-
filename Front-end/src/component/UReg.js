@@ -237,6 +237,25 @@ const UReg = () => {
         <div className="invalid-feedback">Please enter your location</div>
       </div>
 
+      <div className="col-12">
+  <div className="form-check">
+    <input
+      className="form-check-input is-invalid"
+      type="checkbox"
+      defaultValue=""
+      id="invalidCheck3"
+      aria-describedby="invalidCheck3Feedback"
+      required=""
+    />
+    <label className="form-check-label" htmlFor="invalidCheck3">
+      Agree to terms and conditions
+    </label>
+    <div id="invalidCheck3Feedback" className="invalid-feedback">
+      You must agree before sign up.
+    </div>
+  </div>
+</div>
+
       <div className="col-12 ">
         <button type="submit" className="btn btn-primary px-5" onClick={save}>
           Sign up

@@ -1,72 +1,73 @@
 package com.fit2planet.demo.Service;
 
+import com.fit2planet.demo.DTO.CoachDTO;
 import com.fit2planet.demo.DTO.LoginDetailsDTO;
+import com.fit2planet.demo.DTO.LoginRequestDTO;
+import com.fit2planet.demo.DTO.UserDTO;
+import com.fit2planet.demo.Enums.TYPE;
 import com.fit2planet.demo.Model.LoginDetails;
+import com.fit2planet.demo.Repository.CoachRepository;
 import com.fit2planet.demo.Repository.LoginDetailsRepository;
-import jakarta.persistence.EntityNotFoundException;
+import com.fit2planet.demo.Repository.UserRepository;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Service
 public class LoginDetailsService {
 
     @Autowired
     private LoginDetailsRepository loginDetailsRepository;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private CoachRepository coachRepository;
 
     @Autowired
-    public LoginDetailsService(LoginDetailsRepository loginDetailsRepository) {
-        this.loginDetailsRepository = loginDetailsRepository;
+    private ModelMapper modelMapper;
+
+    public LoginDetailsDTO addLoginDetails(LoginDetailsDTO data){
+        try{
+            LoginDetails l=modelMapper.map(data,LoginDetails.class);
+            LoginDetails saved=loginDetailsRepository.save(l);
+            if(saved!= null){
+                return modelMapper.map(saved, new TypeToken<LoginDetailsDTO>(){}.getType());
+            }
+            return null;
+        }
+        catch (Exception e){
+            System.out.println(e.toString());
+            return null;
+        }
     }
 
-    public LoginDetailsDTO saveLoginDetails(LoginDetailsDTO loginDetailsDTO) {
-        LoginDetails loginDetails = new LoginDetails(loginDetailsDTO.getEmail(), loginDetailsDTO.getPassword(), loginDetailsDTO.getType());
-        LoginDetails savedLoginDetails = loginDetailsRepository.save(loginDetails);
-        return new LoginDetailsDTO(savedLoginDetails.getLoginId(), savedLoginDetails.getEmail(), savedLoginDetails.getPassword(), savedLoginDetails.getType());
-    }
-
-    public LoginDetailsDTO getLoginDetailsById(Integer loginId) {
-        Optional<LoginDetails> optionalLoginDetails = loginDetailsRepository.findById(loginId);
-        if (optionalLoginDetails.isPresent()) {
-            LoginDetails loginDetails = optionalLoginDetails.get();
-            return new LoginDetailsDTO(loginDetails.getLoginId(), loginDetails.getEmail(), loginDetails.getPassword(), loginDetails.getType());
-        } else {
-            throw new EntityNotFoundException("LoginDetails not found with ID " + loginId);
+    public ResponseEntity<?> login(LoginRequestDTO data) {
+        try{
+            LoginDetails login=loginDetailsRepository.login(data.getEmail(), data.getPassword());
+            if(login!=null){
+                Map<String, Object> map = new LinkedHashMap<>();
+                if(login.getType()== TYPE.COACH){
+                    map.put("Role", TYPE.COACH);
+                    map.put("data", modelMapper.map(coachRepository.getReferenceById(login.getId()),new TypeToken<CoachDTO>(){}.getType()));
+                    return new ResponseEntity<>(map, HttpStatus.OK);
+                }
+                else{
+                    map.put("Role", TYPE.USER);
+                    map.put("data", modelMapper.map(userRepository.getReferenceById(login.getId()),new TypeToken<UserDTO>(){}.getType()));
+                    return new ResponseEntity<>(map, HttpStatus.OK);
+                }
+            }
+            return null;
+        }
+        catch (Exception e){
+            System.out.println(e.toString());
+            return null;
         }
     }
 }
-
-
-        // =======================================================================
-
-//    public LoginDetailsDTO createLoginDetail(LoginDetailsDTO loginDetailsDTO) {
-//        LoginDetailsDTO loginDetails = new loginDetails();
-//        loginDetails.setEmail(loginDetailsDTO.getEmail());
-//        loginDetails.setPassword(loginDetailsDTO.getPassword());
-//        loginDetails.setType(loginDetailsDTO.getType());
-//        loginDetails createLoginDetail = loginDetailsRepository.save(loginDetails);
-//        return toDTO(createLoginDetail);
-//    }
-//
-//    public LoginDetailsDTO getLoginDetailById(Integer loginId) {
-//        Optional<LoginDetails> loginDetailOptional = loginDetailsRepository.findById(loginId);
-//        if (!loginDetailOptional.isPresent()) {
-//            return null;
-//        }
-//        LoginDetails loginDetail = loginDetailOptional.get();
-//        return toDTO(new LoginDetails());
-//    }
-//
-//    // Other methods...
-//
-//    private LoginDetailsDTO toDTO(LoginDetails loginDetails) {
-//        LoginDetailsDTO loginDetailsDTO = new loginDetailsDTO();
-//        loginDetailsDTO.setLoginId(loginDetails.getLoginId());
-//        loginDetailsDTO.setEmail(loginDetails.getEmail());
-//        loginDetailsDTO.setPassword(loginDetails.getPassword());
-//        loginDetailsDTO.setType(loginDetails.getType());
-//        return loginDetailsDTO;
- //   }
-
-//}

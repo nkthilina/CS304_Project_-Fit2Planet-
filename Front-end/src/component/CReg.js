@@ -372,7 +372,7 @@ const CReg = () => {
         //             {formErrors.address}
         //         </div>
         //     </div> */}
-<div className="col-12">
+{/* <div className="col-12">
 <div className="form-check mb-3">
   <input
     type="checkbox"
@@ -385,7 +385,7 @@ const CReg = () => {
   </label>
   <div className="invalid-feedback">Example invalid feedback text</div>
 </div>
-</div>
+</div> */}
 
 
 
@@ -403,7 +403,7 @@ const CReg = () => {
       Agree to terms and conditions
     </label>
     <div id="invalidCheck3Feedback" className="invalid-feedback">
-      You must agree before submitting.
+      You must agree before sign up.
     </div>
   </div>
 </div>

@@ -11,7 +11,7 @@ const BlogCardPersonalTrainer = () => {
                             <div className="col-9 d-flex">
                                 <img src="img/img 1.jpg" className=" proimg " alt="..." />
                                 <div className="mx-3">
-                                    <h6 className="m-0 p-0">FitPlanet <i className="bi bi-award-fill"></i></h6>
+                                    <h6 className="m-0 p-0">Fit2Planet <i className="bi bi-award-fill"></i></h6>
                                     <p className=" m-0 p-0 text-muted small"> <small> asasdasd </small> </p>
                                 </div>
                             </div>
@@ -24,10 +24,13 @@ const BlogCardPersonalTrainer = () => {
                     </div>
 
 
-                    <h5 className="card-title ">Card title Lorem ipsum dolor, Fugit, odio.</h5>
-                    <p className="card-text ">This is a wider card with supporting text below as a natural lead-in to
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, tenetur! Lorem ipsum dolor
-                        sit amet consectetur adipisic </p>
+                    <h5 className="card-title ">Personal Trainers</h5>
+                    <p className="card-text ">Personal trainers are fitness professionals who provide customized exercise and 
+                    fitness plans to help individuals achieve their health and fitness goals. They work with clients of all ages and 
+                    fitness levels, and their services can range from one-on-one sessions to group training. Personal trainers 
+                    are knowledgeable about different types of exercises, nutrition, and injury prevention, and they use this 
+                    knowledge to create tailored workout plans that address their clients' specific needs. They also provide guidance, 
+                    motivation, and accountability to help their clients stay on track and reach their fitness goals. </p>
 
                     <div className="d-flex justify-content-between pb-0">
                         <p className="card-text"> <small className="text-muted ovel">Last </small></p>

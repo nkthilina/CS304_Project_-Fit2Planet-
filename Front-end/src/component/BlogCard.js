@@ -11,7 +11,7 @@ const BlogCard = () => {
                             <div className="col-9 d-flex">
                                 <img src="" className=" proimg" alt="..." />
                                 <div className="mx-3">
-                                    <h6 className="m-0 p-0">FitPlanet <i className="bi bi-award-fill"></i></h6>
+                                    <h6 className="m-0 p-0">Fit2Planet <i className="bi bi-award-fill"></i></h6>
                                     <p className=" m-0 p-0 text-muted small"> <small> asasdasd </small> </p>
                                 </div>
                             </div>

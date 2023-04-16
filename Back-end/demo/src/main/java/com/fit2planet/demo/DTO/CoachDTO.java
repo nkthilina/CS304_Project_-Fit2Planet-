@@ -10,17 +10,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CoachDTO {
-
     private int coachId;
     private String firstName;
     private String lastName;
     private int age;
     private String gender;
-    private String email;
-    private String password;
-    private Integer mobileNumber;
+    private int mobileNumber;
     private String location;
-    private int yearOfExperience;
+    private Integer yearOfExperience;
     private String certificates;
 
 }

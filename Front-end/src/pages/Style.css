@@ -30,7 +30,7 @@
 
 /* ===============Register page */
 .Regester-bg-img {
-    background-image: url(../assets/Img/Registration/Girl-back.jpg);
+    background-image: url(../assets/Img/Registration/Simeon_abs.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -164,3 +164,7 @@
     width: 50px;
   }
 
+/*=============== items============= */
+.items-img-size{
+    width: 150px;
+}
