@@ -22,7 +22,7 @@ const NavBar = () => {
     localStorage.removeItem("loggeduser");
     navigate("/Home");
   };
-
+  console.log(user);
   return (
     <header className="p-1 bg-dark text-white fixed-top ">
       <div className="container">

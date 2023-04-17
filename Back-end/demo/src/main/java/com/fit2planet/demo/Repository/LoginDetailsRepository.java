@@ -10,4 +10,6 @@ public interface LoginDetailsRepository extends JpaRepository<LoginDetails, Inte
 
     @Query(value = "SELECT * FROM `fit2planet-db`.login_details WHERE email=?1 AND password=?2", nativeQuery = true)
     LoginDetails login(String email, String password);
+
+
 }

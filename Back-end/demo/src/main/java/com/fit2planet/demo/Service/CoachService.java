@@ -67,9 +67,6 @@ public class CoachService {
 
     }
 
-    public Coach getCoachByCoachId(Integer coachId) {
-        return coachRepository.getCoachByCoachId(coachId);
-    }
 
     public Coach getCoachByLocation(String location) {
         return coachRepository.getCoachByLocation(location);
@@ -104,5 +101,12 @@ public class CoachService {
         coach.setCertificates(certificates);
     }
 
+    public Coach getCoachById(int id){
+        return coachRepository.getReferenceById(id);
+    }
 
+//    public CoachDTO getCoachByCoachId(Integer coachId) {
+//        Optional<Coach> coachOptional = coachRepository.findById(coachId);
+//        return coachOptional.map(coach -> modelMapper.map(coach, CoachDTO.class)).orElse(null);
+//    }
 }

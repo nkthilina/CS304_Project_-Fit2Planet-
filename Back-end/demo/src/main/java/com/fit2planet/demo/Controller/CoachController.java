@@ -16,7 +16,7 @@ import java.util.Map;
 
 @Controller
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 @RequestMapping(value = "/api/v1/coach")
 public class CoachController {
 
@@ -24,7 +24,7 @@ public class CoachController {
     private CoachService coachService;
 
     //with DTO package
-    @PostMapping("/addcoach")
+    @PostMapping("/add")
     public ResponseEntity<?> addCoach(@RequestBody SignUpCoachDTO coachDTO){
         Map<String, Object> map = new LinkedHashMap<>();
         CoachDTO c=coachService.addCoach(coachDTO);
@@ -42,7 +42,7 @@ public class CoachController {
 
 
 
-    @GetMapping("/getAll")
+    @GetMapping("/getAllCoaches")
     public ResponseEntity<?> getAllCoaches(){
         Map<String, Object> map = new LinkedHashMap<>();
         List<CoachDTO> c=coachService.getAllCoaches();
@@ -58,10 +58,31 @@ public class CoachController {
         }
     }
 
-    @GetMapping("/get/{coachId}")
-    public Coach getCoachByCoachId(@PathVariable Integer coachId) {
-        return coachService.getCoachByCoachId(coachId);
+//    @GetMapping("/get/{coachId}")
+//    public ResponseEntity<?> getCoachByCoachId(@PathVariable Integer coachId) {
+//        Map<String, Object> map = new LinkedHashMap<>();
+//        CoachDTO coach = coachService.getCoachByCoachId(coachId);
+//        if (coach != null) {
+//            map.put("status", 1);
+//            map.put("data", coach);
+//            return new ResponseEntity<>(map, HttpStatus.OK);
+//        } else {
+//            map.clear();
+//            map.put("status", 0);
+//            map.put("message", "Coach not found with id: " + coachId);
+//            return new ResponseEntity<>(map, HttpStatus.OK);
+//        }
+//    }
+
+    @GetMapping("/{id}")
+    public Coach getCoachById(@PathVariable int id){
+        return coachService.getCoachById(id);
     }
+
+//    @GetMapping("/get/{coachId}")
+//    public Coach getCoachByCoachId(@PathVariable Integer coachId) {
+//        return coachService.getCoachByCoachId(coachId);
+//    }
 
     @GetMapping("/get/{location}")
     public Coach getCoachByLocation(@PathVariable String location) {

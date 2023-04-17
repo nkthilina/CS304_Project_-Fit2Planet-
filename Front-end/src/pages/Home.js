@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
@@ -30,9 +31,22 @@ import "./Style.css";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState();
+  useEffect(() => {
+    setTimeout(() => {
+      let logged = localStorage.getItem("loggeduser");
+      if (logged) {
+        setUser(JSON.parse(logged));
+      } else {
+        setUser(null);
+        localStorage.removeItem("loggeduser");
+      }
+    }, 1000);
+  }, [localStorage.getItem("loggeduser")]);
+
   return (
     <div className="details">
-      
       <section className="home-bg-img mt-5">
         <div className="container mt-10">
           <div className="row text-light ">
@@ -87,7 +101,66 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-3 ">
+      {!user || user?.Role === "USER" ? (
+        <section className="py-3 ">
+          <div className="container p-5">
+            <div className="row  justify-content-center align-items-center text-center g-0">
+              <div className="col-md-3">
+                <div className="card p-3 rounded-3 bg-light">
+                  <div className="card-body">
+                    <h5 className="card-title"> FREE FITNESS CONSULTATION</h5>
+                    <p className="card-text">
+                      Through a short survey, and a movement assessment, the
+                      Fit2Planet system will prescribe the perfect program to
+                      get you started and on track to meet your fitness goals.
+                    </p>
+                    <h5 className="p-3 text-primary"></h5>
+                    <a href="#" className="btn btn-primary rounded-pill">
+                      Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-md-3 shadow-lg">
+                <div className="card px-4 py-5  rounded-3 bg-light">
+                  <div className="card-body">
+                    <h5 className="card-title"> GROUP WORKOUTS</h5>
+                    <p className="card-text">
+                      Full-body workouts are designed to build strength and
+                      endurance, using the energy of a small group or team of
+                      people around you and the expertise of the coach to
+                      maximize your results.
+                    </p>
+                    <h5 className="p-3 text-primary">15$</h5>
+                    <a href="#" className="btn btn-primary rounded-pill">
+                      Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-md-3">
+                <div className="card p-3 rounded-3 bg-light">
+                  <div className="card-body">
+                    <h5 className="card-title"> ONE-ON-ONE TRAINING </h5>
+                    <p className="card-text">
+                      One-on-one personalized workouts with your coach are
+                      designed to make you stronger from the inside out.
+                    </p>
+                    <h5 className="p-3 text-primary">30$</h5>
+                    <a href="#" className="btn btn-primary rounded-pill">
+                      Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : ( " ")  }
+
+      {/* <section className="py-3 ">
         <div className="container p-5">
           <div className="row  justify-content-center align-items-center text-center g-0">
             <div className="col-md-3">
@@ -106,7 +179,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
             <div className="col-md-3 shadow-lg">
               <div className="card px-4 py-5  rounded-3 bg-light">
                 <div className="card-body">
@@ -124,7 +196,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
             <div className="col-md-3">
               <div className="card p-3 rounded-3 bg-light">
                 <div className="card-body">
@@ -142,7 +213,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-5">
         <div className="container">
@@ -473,7 +544,6 @@ const Home = () => {
           </p>
         </div>
       </section>
-      
     </div>
   );
 };

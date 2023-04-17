@@ -57,13 +57,13 @@ public class UserService {
         return modelMapper.map(userList,new TypeToken<List<UserDTO>>(){}.getType());
     }
 
-    public User getUserByUserId(Integer userId) {
-        return userRepository.getUserByUserId(userId);
-    }
+//    public User getUserByUserId(Integer userId) {
+//        return userRepository.getUserByUserId(userId);
+//    }
 
-    public void deleteUserByUserId(Integer userId){
-        userRepository.deleteById(userId);
-    }
+//    public void deleteUserByUserId(Integer userId){
+//        userRepository.deleteById(userId);
+//    }
 
     public void updateUser(Integer userId,
                              String firstName,
@@ -81,11 +81,34 @@ public class UserService {
         user.setLocation(location);
     }
 
-//----------------------------------------------------
-//    public Optional<Object> findById(Integer userId) {
-//        return true;
+
+//    public UserDTO getUserById(Integer userId) {
+//        try {
+//            User user = userRepository.getUserById(userId);
+//            if(user == null) {
+//                return null;
+//            }else {
+//                return modelMapper.map(user, new TypeToken<UserDTO>(){}.getType());
+//            }
+//        }
+//        catch (Exception e) {
+//            System.out.println(e.toString());
+//            return null;
+//        }
 //    }
+
+    public UserDTO updateUser(UserDTO userDTO) {
+        userRepository.save(modelMapper.map(userDTO, User.class));
+        return userDTO;
+    }
+
+    public boolean deleteUser(UserDTO userDTO) {
+        userRepository.delete(modelMapper.map(userDTO, User.class));
+        return true;
+    }
+
+
+//    public UserDTO getUserById(Integer userId) {
 //
-//    public void save(UserDTO updateUser) {
 //    }
 }
