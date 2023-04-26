@@ -79,38 +79,17 @@ public class CoachController {
         return coachService.getCoachById(id);
     }
 
-//    @GetMapping("/get/{coachId}")
-//    public Coach getCoachByCoachId(@PathVariable Integer coachId) {
-//        return coachService.getCoachByCoachId(coachId);
-//    }
-
     @GetMapping("/get/{location}")
     public Coach getCoachByLocation(@PathVariable String location) {
         return coachService.getCoachByLocation(location);
     }
+
+
 
     @DeleteMapping("/delete/{coachId}")
     public String deleteCoachByCoachId(@PathVariable Integer coachId){
         coachService.deleteCoachByCoachId(coachId);
         return "Coach with coachId "+coachId+" is successfully removed";
     }
-
-//    @PutMapping("/update/{coachId}")
-//    public String updateCoach(@PathVariable Integer coachId, @RequestBody @NotNull CoachDTO coachDTO) {
-//        coachService.updateCoach(
-//                coachId,
-//                coachDTO.getFirstName(),
-//                coachDTO.getLastName(),
-//                coachDTO.getAge(),
-//                coachDTO.getGender(),
-////                coachDTO.getEmail(),
-////                coachDTO.getPassword(),
-////                coachDTO.getMobileNumber(),
-//                coachDTO.getLocation(),
-//                coachDTO.getYearOfExperience(),
-//                coachDTO.getCertificates());
-//        return "Coach with coachId "+coachId+" is successfully updated";
-//    }
-
 
 }

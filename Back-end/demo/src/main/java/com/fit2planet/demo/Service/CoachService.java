@@ -78,28 +78,28 @@ public class CoachService {
 
 
 
-    public void updateCoach(Integer coachId,
-                            String firstName,
-                            String lastName, int age,
-                            String gender, String email,
-                            String password,
-                            Integer mobileNumber,
-                            String location,
-                            int yearOfExperience,
-                            String certificates) {
-
-        Coach coach = coachRepository.getReferenceById(coachId);
-        coach.setFirstName(firstName);
-        coach.setLastName(lastName);
-        coach.setAge(age);
-        coach.setGender(gender);
-//        coach.setEmail(email);
-//        coach.setPassword(password);
-        coach.setMobileNumber(mobileNumber);
-        coach.setLocation(location);
-        coach.setYearOfExperience(yearOfExperience);
-        coach.setCertificates(certificates);
-    }
+//    public void updateCoach(Integer coachId,
+//                            String firstName,
+//                            String lastName, int age,
+//                            String gender, String email,
+//                            String password,
+//                            Integer mobileNumber,
+//                            String location,
+//                            int yearOfExperience,
+//                            String certificates) {
+//
+//        Coach coach = coachRepository.getReferenceById(coachId);
+//        coach.setFirstName(firstName);
+//        coach.setLastName(lastName);
+//        coach.setAge(age);
+//        coach.setGender(gender);
+////        coach.setEmail(email);
+////        coach.setPassword(password);
+//        coach.setMobileNumber(mobileNumber);
+//        coach.setLocation(location);
+//        coach.setYearOfExperience(yearOfExperience);
+//        coach.setCertificates(certificates);
+//    }
 
     public Coach getCoachById(int id){
         return coachRepository.getReferenceById(id);

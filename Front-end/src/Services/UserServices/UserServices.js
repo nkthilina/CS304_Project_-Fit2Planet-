@@ -6,7 +6,7 @@ axios.defaults.baseURL = USER_BASE_REST_API_URL;
 
 class UserServices {
   getAllUsers() {
-    return http.get("/user/getAll");
+    return http.get("/user/getAllUsers");
   }
 
   async createUser(user) {
@@ -62,7 +62,7 @@ class UserServices {
   // };
   
   async deleteUser(userId){
-    return http.delete(`/user/delete/${userId}`);
+    return http.delete(`/user/deleteUser/${userId}`);
   }
 
 }

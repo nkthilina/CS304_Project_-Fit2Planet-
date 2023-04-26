@@ -72,6 +72,7 @@ const Home = () => {
               >
                 be excited
               </button>
+              
             </div>
           </div>
         </div>
@@ -159,61 +160,6 @@ const Home = () => {
           </div>
         </section>
       ) : ( " ")  }
-
-      {/* <section className="py-3 ">
-        <div className="container p-5">
-          <div className="row  justify-content-center align-items-center text-center g-0">
-            <div className="col-md-3">
-              <div className="card p-3 rounded-3 bg-light">
-                <div className="card-body">
-                  <h5 className="card-title"> FREE FITNESS CONSULTATION</h5>
-                  <p className="card-text">
-                    Through a short survey, and a movement assessment, the
-                    Fit2Planet system will prescribe the perfect program to get
-                    you started and on track to meet your fitness goals.
-                  </p>
-                  <h5 className="p-3 text-primary"></h5>
-                  <a href="#" className="btn btn-primary rounded-pill">
-                    Learn More
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 shadow-lg">
-              <div className="card px-4 py-5  rounded-3 bg-light">
-                <div className="card-body">
-                  <h5 className="card-title"> GROUP WORKOUTS</h5>
-                  <p className="card-text">
-                    Full-body workouts are designed to build strength and
-                    endurance, using the energy of a small group or team of
-                    people around you and the expertise of the coach to maximize
-                    your results.
-                  </p>
-                  <h5 className="p-3 text-primary">15$</h5>
-                  <a href="#" className="btn btn-primary rounded-pill">
-                    Learn More
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card p-3 rounded-3 bg-light">
-                <div className="card-body">
-                  <h5 className="card-title"> ONE-ON-ONE TRAINING </h5>
-                  <p className="card-text">
-                    One-on-one personalized workouts with your coach are
-                    designed to make you stronger from the inside out.
-                  </p>
-                  <h5 className="p-3 text-primary">30$</h5>
-                  <a href="#" className="btn btn-primary rounded-pill">
-                    Learn More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="py-5">
         <div className="container">
@@ -387,7 +333,6 @@ const Home = () => {
       <section className="py-5 services">
         <div className="container">
           <div className="mb-4 text-center">
-            {/* <h1> Services </h1> */}
             <h1> Coach. Care. Connect. </h1>
             <p>Virtual Workouts • Health Coaching Advice • Community</p>
           </div>
@@ -458,7 +403,7 @@ const Home = () => {
                   <FaHeartbeat className="fa" />
                 </div>
                 <div className="col-10">
-                  <h4>Free Consultatnt</h4>
+                  <h4>Free Consultant</h4>
                   <p>Expert advice at no cost for fitness goals.</p>
                 </div>
               </div>

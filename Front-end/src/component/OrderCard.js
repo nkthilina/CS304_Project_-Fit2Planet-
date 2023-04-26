@@ -7,7 +7,9 @@ const OrderCard = () => {
             <div className="card shadow">
                 <img src={collection} className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
+                    <h5 className="card-title">
+                        <a href="/Items"> Card title </a>
+                    </h5>
                     <p className="card-text small text-muted font-italic">
                         Some quick example text to build on the card title and makeup
                     </p>

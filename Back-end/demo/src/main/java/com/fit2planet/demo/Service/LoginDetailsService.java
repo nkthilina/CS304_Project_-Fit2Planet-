@@ -9,6 +9,8 @@ import com.fit2planet.demo.Model.LoginDetails;
 import com.fit2planet.demo.Repository.CoachRepository;
 import com.fit2planet.demo.Repository.LoginDetailsRepository;
 import com.fit2planet.demo.Repository.UserRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,9 @@ public class LoginDetailsService {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
+    private EntityManager entityManager;
+
     public LoginDetailsDTO addLoginDetails(LoginDetailsDTO data){
         try{
             LoginDetails l=modelMapper.map(data,LoginDetails.class);
@@ -45,6 +50,11 @@ public class LoginDetailsService {
             System.out.println(e.toString());
             return null;
         }
+    }
+
+    @Transactional
+    public void deleteDetail(TYPE type,int id){
+        loginDetailsRepository.delete(type,id);
     }
 
     public ResponseEntity<?> login(LoginRequestDTO data) {

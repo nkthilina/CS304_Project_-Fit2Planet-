@@ -6,7 +6,7 @@ axios.defaults.baseURL = USER_BASE_REST_API_URL;
 
 class CoachServices {
   getAllCoaches() {
-    return http.get("/coach/getAll");
+    return http.get("/coach/getAllCoaches");
   }
 
   async createCoach(coach) {

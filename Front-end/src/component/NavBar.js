@@ -50,6 +50,11 @@ const NavBar = () => {
                 BMI
               </a>
             </li>
+            {/* <li>
+              <a href="/CProfile" className="nav-link px-2 text-white">
+                Coach
+              </a>
+            </li> */}
             {!user && (
               <>
                 <li>

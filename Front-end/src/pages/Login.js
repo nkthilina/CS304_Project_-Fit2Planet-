@@ -87,7 +87,7 @@ const Login = () => {
   }
 
   return (
-    <div className="login-bg-img d-flex justify-content-center align-items-center">
+    <div className="login-bg-img d-flex justify-content-center align-items-center mt-5">
       <div className="card ">
         <div className="card-body p-5">
           <form className="needs-validation" onClick={handleSubmit}>

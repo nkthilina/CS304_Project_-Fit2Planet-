@@ -152,6 +152,11 @@
     margin-top: 160px;
   }
 
+  .px-10{
+    padding-left: 30rem;
+    padding-right: 30px;
+    padding-top: 5rem;
+  }
 
   .col-md-2 {
     padding: 20px;

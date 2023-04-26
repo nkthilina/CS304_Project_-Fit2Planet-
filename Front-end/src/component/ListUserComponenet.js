@@ -4,7 +4,6 @@ import UserServices from "../Services/UserServices/UserServices";
 import CoachServices from "../Services/CoachServices/CoachServices";
 
 const ListUserComponent = () => {
-
   // ============user=================
 
   const [user, setUser] = useState([]);
@@ -16,7 +15,7 @@ const ListUserComponent = () => {
   const getAllUsers = () => {
     UserServices.getAllUsers()
       .then((response) => {
-        setUser(response.data);
+        setUser(response.data.data);
         console.log(response.data);
       })
       .catch((error) => {
@@ -45,7 +44,7 @@ const ListUserComponent = () => {
   const getAllCoaches = () => {
     CoachServices.getAllCoaches()
       .then((response) => {
-        setCoach(response.data);
+        setCoach(response.data.data);
         console.log(response.data);
       })
       .catch((error) => {
@@ -63,14 +62,14 @@ const ListUserComponent = () => {
       });
   };
 
-
   return (
     <div className="container mt-10">
-
       {/* ===============User================= */}
 
       <h2 className="text-center mb-4">List of users</h2>
-      {/* <Link to = "/add-user" className="btn btn-primary mb-2 mt-5">Add User</Link> */}
+      <Link to="/add-user" className="btn btn-primary mb-2 mt-5">
+        Add User
+      </Link>
 
       <table className="table table-bordered table-striped">
         <thead>
@@ -81,17 +80,14 @@ const ListUserComponent = () => {
           <th>Actions</th>
         </thead>
         <tbody>
-          {user.map((user) => (
+          {user?.map((user) => (
             <tr key={user.userId}>
               <td>{user.userId}</td>
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
               <td>{user.email}</td>
               <td>
-                <Link
-                  className="btn btn-info"
-                  to={`/edit-user`}
-                >
+                <Link className="btn btn-info" to={`/edit-user`}>
                   Update
                 </Link>
                 {/* <Link
@@ -103,7 +99,6 @@ const ListUserComponent = () => {
                 <button
                   className="btn btn-danger"
                   onClick={() => deleteUser(user.userId)}
-
                 >
                   Delete
                 </button>
@@ -116,7 +111,9 @@ const ListUserComponent = () => {
       {/* ===============Coach================= */}
 
       <h2 className="text-center mt-5 mb-4">List of coaches</h2>
-      {/* <Link to = "/add-user" className="btn btn-primary mb-2 mt-5">Add User</Link> */}
+      <Link to="/add-user" className="btn btn-primary mb-2 mt-5">
+        Add User
+      </Link>
 
       <table className="table table-bordered table-striped mb-5">
         <thead>
@@ -127,17 +124,14 @@ const ListUserComponent = () => {
           <th>Actions</th>
         </thead>
         <tbody>
-          {coach.map((coach) => (
+          {coach?.map((coach) => (
             <tr key={coach.coachId}>
               <td>{coach.coachId}</td>
               <td>{coach.firstName}</td>
               <td>{coach.lastName}</td>
               <td>{coach.email}</td>
               <td>
-                <Link
-                  className="btn btn-info"
-                  to={`/edit-coach`}
-                >
+                <Link className="btn btn-info" to={`/edit-coach`}>
                   Update
                 </Link>
                 {/* <Link
@@ -149,7 +143,6 @@ const ListUserComponent = () => {
                 <button
                   className="btn btn-danger"
                   onClick={() => deleteCoach(coach.coachId)}
-
                 >
                   Delete
                 </button>
@@ -158,7 +151,6 @@ const ListUserComponent = () => {
           ))}
         </tbody>
       </table>
-
     </div>
   );
 };

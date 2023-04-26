@@ -71,21 +71,21 @@ public class UserController {
 //        }
 //    }
 
-//    @PutMapping("/updateUser")
-//    public ResponseEntity<?>  updateUser(@RequestBody UserDTO userdata) {
-//        Map<String, Object> map = new LinkedHashMap<String, Object>();
-//        UserDTO user = userService.updateUser(userdata);
-//        if (user != null) {
-//            map.put("status", 1);
-//            map.put("data", user);
-//            return new ResponseEntity<>(map, HttpStatus.OK);
-//        } else {
-//            map.clear();
-//            map.put("status", 0);
-//            map.put("message", "Update failed");
-//            return new ResponseEntity<>(map, HttpStatus.OK);
-//        }
-//    }
+    @PutMapping("/updateUser")
+    public ResponseEntity<?>  updateUser(@RequestBody UserDTO userdata) {
+        Map<String, Object> map = new LinkedHashMap<String, Object>();
+        UserDTO user = userService.updateUser(userdata);
+        if (user != null) {
+            map.put("status", 1);
+            map.put("data", user);
+            return new ResponseEntity<>(map, HttpStatus.OK);
+        } else {
+            map.clear();
+            map.put("status", 0);
+            map.put("message", "Update failed");
+            return new ResponseEntity<>(map, HttpStatus.OK);
+        }
+    }
 //
 //    @DeleteMapping("/deleteUser/{userId}")
 //    public ResponseEntity<?>  deleteUser(@PathVariable Integer userId) {
@@ -103,14 +103,14 @@ public class UserController {
 //        }
 //    }
 
-    @PutMapping("/updateUser")
-    public UserDTO updateUser(@RequestBody UserDTO userDTO){
-        return userService.updateUser(userDTO);
-    }
+//    @PutMapping("/updateUser")
+//    public UserDTO updateUser(@RequestBody UserDTO userDTO){
+//        return userService.updateUser(userDTO);
+//    }
 
-    @DeleteMapping("/deleteUser")
-    public boolean deleteUser(@RequestBody UserDTO userDTO){
-        return userService.deleteUser(userDTO);
+    @DeleteMapping("/deleteUser/{userId}")
+    public String deleteUserById(@PathVariable Integer userId){
+        return userService.deleteUserById(userId);
     }
 
 }

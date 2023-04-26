@@ -16,7 +16,7 @@ const CUpdate = () => {
     event.preventDefault();
     if (password === confirmPassword) {
       try {
-        await axios.post("http://localhost:8080/api/v1/user/add", {
+        await axios.post("http://localhost:8080/api/v1/coach/add", {
           firstName: firstName,
           lastName: lastName,
           password: password,

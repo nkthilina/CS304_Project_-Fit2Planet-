@@ -10,7 +10,7 @@ const Items = () => {
   return (
     <div>
       <>
-        <section className="py-5 p-3 bg-light">
+        <section className="py-5 p-3 bg-light mt-5 mt-10">
           <div className="row">
             <div className="col-md-5">
               <img
@@ -93,6 +93,9 @@ const Items = () => {
             </div>
           </div>
         </section>
+
+
+
         <div
           className="modal fade"
           id="staticBackdrop"
@@ -102,7 +105,7 @@ const Items = () => {
           aria-labelledby="staticBackdropLabel"
           aria-hidden="true"
         >
-          <div className="modal-dialog modal-lg modal-dialog-centered border border-secondary rounded-3">
+          <div className="modal-dialog modal-lg modal-dialog-centered rounded-3">
             <div className="modal-content">
               <div className="modal-header ">
                 <h5 className="modal-title" id="staticBackdropLabel">

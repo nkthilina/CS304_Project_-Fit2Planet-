@@ -70,7 +70,9 @@ const Register = () => {
                 <CReg> </CReg>
               </div>
             </div>
-            <div class="col-12"></div>
+            {/* <div class="col-12">
+              <button className="btn-danger mt-5 px-10"><h6 className="text-dark">login</h6></button>
+            </div> */}
           </div>
         </div>
       </div>

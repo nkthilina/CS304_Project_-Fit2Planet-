@@ -1,18 +1,13 @@
 package com.fit2planet.demo.Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Date;
 import java.sql.Time;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "package")
@@ -44,7 +39,7 @@ public class Package {
         this.user = user;
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name = "packageId", referencedColumnName = "packageId")
     private List<User> user = new ArrayList<>();
 

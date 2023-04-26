@@ -65,21 +65,21 @@ public class UserService {
 //        userRepository.deleteById(userId);
 //    }
 
-    public void updateUser(Integer userId,
-                             String firstName,
-                             String lastName,
-                             Integer age,
-                             String gender,
-                             Integer mobileNumber,
-                             String location) {
-        User user = userRepository.getReferenceById(userId);
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setAge(age);
-        user.setGender(gender);
-        user.setMobileNumber(mobileNumber);
-        user.setLocation(location);
-    }
+//    public void updateUser(Integer userId,
+//                             String firstName,
+//                             String lastName,
+//                             Integer age,
+//                             String gender,
+//                             Integer mobileNumber,
+//                             String location) {
+//        User user = userRepository.getReferenceById(userId);
+//        user.setFirstName(firstName);
+//        user.setLastName(lastName);
+//        user.setAge(age);
+//        user.setGender(gender);
+//        user.setMobileNumber(mobileNumber);
+//        user.setLocation(location);
+//    }
 
 
 //    public UserDTO getUserById(Integer userId) {
@@ -97,18 +97,60 @@ public class UserService {
 //        }
 //    }
 
+//    public UserDTO updateUser(UserDTO userDTO) {
+//        userRepository.save(modelMapper.map(userDTO, User.class));
+//        return userDTO;
+//    }
+
+//    public boolean deleteUser(LoginDetailsDTO loginDetailsDTO) {
+//        userRepository.delete(modelMapper.map(loginDetailsDTO, LoginDetails.class));
+//        return true;
+//    }
+
+    public String deleteUserById(Integer userId) {
+        userRepository.deleteById(userId);
+//        loginDetailsService.deleteDetail(TYPE.USER,userId);
+        return "User is deleted";
+    }
+
     public UserDTO updateUser(UserDTO userDTO) {
-        userRepository.save(modelMapper.map(userDTO, User.class));
-        return userDTO;
+        try{
+            UserDTO validUser = getUserById(userDTO.getUserId());
+
+            if(validUser != null) {
+                if(validUser != null) {
+                    int n=userRepository.updateUser(userDTO.getFirstName(), userDTO.getLastName(), userDTO.getMobileNumber(), userDTO.getLocation(), userDTO.getAge(),userDTO.getGender(), userDTO.getUserId());
+                    if(n==1) {
+                        return getUserById(validUser.getUserId());
+                    }
+                }
+            }
+            return null;
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+            return null;
+        }
     }
 
-    public boolean deleteUser(UserDTO userDTO) {
-        userRepository.delete(modelMapper.map(userDTO, User.class));
-        return true;
+    private UserDTO getUserById(Integer userId) {
+        try{
+            User user = userRepository.getUserById(userId);
+
+            if(user==null){
+                return null;
+            }
+            return modelMapper.map(user, new TypeToken<UserDTO>() {
+            }.getType());
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+            return null;
+        }
     }
 
 
-//    public UserDTO getUserById(Integer userId) {
+//    private UserDTO getUserById(Integer userId) {
 //
 //    }
 }

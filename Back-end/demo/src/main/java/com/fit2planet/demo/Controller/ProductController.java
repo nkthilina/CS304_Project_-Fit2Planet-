@@ -1,9 +1,7 @@
 package com.fit2planet.demo.Controller;
 
 import com.fit2planet.demo.DTO.ProductDTO;
-import com.fit2planet.demo.DTO.UserDTO;
 import com.fit2planet.demo.Model.Product;
-import com.fit2planet.demo.Model.User;
 import com.fit2planet.demo.Service.ProductService;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/product")
-@CrossOrigin
+@CrossOrigin("*")
 public class ProductController {
 
     @Autowired

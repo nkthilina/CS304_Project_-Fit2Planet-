@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Style.css";
 import CoachCard from "../component/CoachCard";
-import CoachService from "../Services/CoachServices/CoachServices.js";
+import CoachService from "../Services/CoachServices/CoachServices";
 
 const CProfile = () => {
   const [firstName, setFirstName] = useState("");
@@ -23,6 +23,7 @@ const CProfile = () => {
   useEffect(() => {
     getAllCoaches();
     getCoachById();
+    deleteCoach();
   }, []);
 
   const getAllCoaches = () => {
@@ -58,15 +59,15 @@ const CProfile = () => {
 
   return (
     <div>
-      {coaches.map((coach) => (
+      {coach?.map((coach) => (
         <CoachCard
-          coachId={coach?.coachId}
-          email={coach?.email}
-          firstName={coach?.firstName}
-          lastName={coach?.lastName}
-          location={coach?.location}
-          certificates={coach?.certificates}
-          yearOfExperience={coach?.yearOfExperience}
+          coachId={coach.coachId}
+          email={coach.email}
+          firstName={coach.firstName}
+          lastName={coach.lastName}
+          location={coach.location}
+          certificates={coach.certificates}
+          yearOfExperience={coach.yearOfExperience}
         />
       ))}
     </div>

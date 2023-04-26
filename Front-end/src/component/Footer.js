@@ -43,11 +43,11 @@ const Footer = () => {
         </div>
         <div className="row py-4">
           <div className="col-md-4">
-            <div className="">
-              <FaFacebookF className="icon" />
-              <FaGithub className="icon" />
-              <FaInstagram className="icon" />
-              <FaLinkedin className="icon" />
+            <div className=""> 
+              <a href="https://www.facebook.com/thilina.madhusanka.12382?mibextid=ZbWKwL"><FaFacebookF className="icon" /></a>
+              <a href="https://github.com/nkthilina"><FaGithub className="icon" /></a>
+              <a href="https://instagram.com/_i_am_thilina_?igshid=ZDdkNTZiNTM="><FaInstagram className="icon" /></a>
+              <a href="https://www.linkedin.com/analytics/search-appearances/"><FaLinkedin className="icon" /></a>
             </div>
           </div>
           <div className="col-md-4 mt-5">
@@ -59,12 +59,6 @@ const Footer = () => {
                 <p> About </p>
                 <p> Contact </p>
               </div>
-              {/* <div className="col-6">
-                <p> Home </p>
-                <p> About </p>
-                <p> Blog </p>
-                <p> Contact </p>
-              </div> */}
             </div>
           </div>
         
