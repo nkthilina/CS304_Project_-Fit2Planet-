@@ -13,7 +13,8 @@ const UReg = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [location, setLocation] = useState("");
- 
+  const [uploadPhoto, setUploadPhoto] = useState("");
+
   async function save(event) {
     event.preventDefault();
     if (password === confirmPassword) {
@@ -27,6 +28,7 @@ const UReg = () => {
           password: password,
           mobileNumber: mobileNumber,
           location: location,
+          uploadPhoto: uploadPhoto,
         });
         alert("User registered successfully.");
         setFirstName("");
@@ -37,6 +39,7 @@ const UReg = () => {
         setPassword("");
         setMobileNumber("");
         setLocation("");
+        setUploadPhoto("");
       } catch (err) {
         alert("User registration failed.");
       }
@@ -67,7 +70,6 @@ const UReg = () => {
   //     return <h2 className="text-center">Add Employee</h2>;
   //   }
   // };
-
 
   //--------------------------------------
 
@@ -189,6 +191,22 @@ const UReg = () => {
         <div className="invalid-feedback">Please enter a password</div>
       </div>
       <div className="col-md-6 form-group was-validated mb-2">
+        <label htmlFor="UContactNumber" className="form-label">
+          {" "}
+          Contact Number{" "}
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="UContactNumber"
+          name="contactNumber"
+          value={mobileNumber}
+          onChange={(event) => setMobileNumber(event.target.value)}
+          required
+        />
+        <div className="invalid-feedback">Please enter your contact number</div>
+      </div>
+      <div className="col-md-6 form-group was-validated mb-2">
         <label htmlFor="UConfirmPassword" className="form-label">
           {" "}
           Confirm Password{" "}
@@ -204,21 +222,20 @@ const UReg = () => {
         />
         <div className="invalid-feedback">Please confirm password</div>
       </div>
-      <div className="col-md-6 form-group was-validated mb-2">
-        <label htmlFor="UContactNumber" className="form-label">
-          {" "}
-          Contact Number{" "}
-        </label>
+      <div className="col-md-12 input-group form-group was-validated mb-2">
         <input
-          type="text"
+          type="file"
           className="form-control"
-          id="UContactNumber"
-          name="contactNumber"
-          value={mobileNumber}
-          onChange={(event) => setMobileNumber(event.target.value)}
+          id="inputGroupFile02"
+          name="uploadPhoto"
+          value={uploadPhoto}
+          onChange={(event) => setUploadPhoto(event.target.value)}
           required
         />
-        <div className="invalid-feedback">Please enter your contact number</div>
+        <label className="input-group-text" htmlFor="inputGroupFile02">
+          Upload
+        </label>
+        <div className="invalid-feedback">Please upload your photo</div>
       </div>
       <div className="col-md-12 form-group was-validated mb-2">
         <label htmlFor="UAddress" className="form-label">
@@ -238,33 +255,31 @@ const UReg = () => {
       </div>
 
       <div className="col-12">
-  <div className="form-check">
-    <input
-      className="form-check-input is-invalid"
-      type="checkbox"
-      defaultValue=""
-      id="invalidCheck3"
-      aria-describedby="invalidCheck3Feedback"
-      required=""
-    />
-    <label className="form-check-label" htmlFor="invalidCheck3">
-      Agree to terms and conditions
-    </label>
-    <div id="invalidCheck3Feedback" className="invalid-feedback">
-      You must agree before sign up.
-    </div>
-  </div>
-</div>
+        <div className="form-check">
+          <input
+            className="form-check-input is-invalid"
+            type="checkbox"
+            defaultValue=""
+            id="invalidCheck3"
+            aria-describedby="invalidCheck3Feedback"
+            required=""
+          />
+          <label className="form-check-label" htmlFor="invalidCheck3">
+            Agree to terms and conditions
+          </label>
+          <div id="invalidCheck3Feedback" className="invalid-feedback">
+            You must agree before sign up.
+          </div>
+        </div>
+      </div>
 
       <div className="col-12 ">
         <button type="submit" className="btn btn-primary px-5" onClick={save}>
           Sign up
         </button>
         <label className="text-center p-2">
-          have and account.{" "}
-          <Link to={"/Login"}>Login</Link> here
+          have and account. <Link to={"/Login"}>Login</Link> here
         </label>
-        
       </div>
     </form>
   );
